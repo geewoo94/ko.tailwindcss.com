@@ -98,17 +98,22 @@ export function NavItems() {
     <>
       <li>
         <Link href="/docs/installation">
-          <a className="hover:text-sky-500">Docs</a>
+          <a className="hover:text-sky-500">문서</a>
         </Link>
       </li>
       <li>
         <a href="https://tailwindui.com" className="hover:text-sky-500">
-          Components
+          컴포넌트
         </a>
       </li>
       <li>
         <Link href="/blog">
-          <a className="hover:text-sky-500">Blog</a>
+          <a className="hover:text-sky-500">블로그</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="https://github.com/geewoo94/tailwindcss.com">
+          <a className="hover:text-sky-500">번역 돕기</a>
         </Link>
       </li>
       <li>

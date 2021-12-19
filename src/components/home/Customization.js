@@ -95,17 +95,16 @@ export function Customization() {
         </IconContainer>
         <Caption className="text-pink-500">Customization</Caption>
         <BigText>
-          <Widont>Extend it, tweak it, change it.</Widont>
+          <Widont>확장하고, 조정하고, 바꾸고.</Widont>
         </BigText>
         <Paragraph as="div">
           <p>
-            Tailwind includes an expertly crafted set of defaults out-of-the-box, but literally
-            everything can be customized — from the color palette to the spacing scale to the box
-            shadows to the mouse cursor.
+            Tailwind에는 전문적으로 제작된 기본 설정이 포함되어 있지만 색상 팔레트에서 간격 눈금,
+            상자 그림자, 마우스 커서에 이르기까지 말 그대로 모든 것을 사용자 정의할 수 있습니다.
           </p>
           <p>
-            Use the tailwind.config.js file to craft your own design system, then let Tailwind
-            transform it into your own custom CSS framework.
+            tailwind.config.js 파일을 사용하여 고유한 디자인 시스템을 만든 다음 Tailwind에서 사용자
+            정의 CSS 프레임워크로 변환하도록 합니다.
           </p>
         </Paragraph>
         <Link href="/docs/configuration" color="pink">

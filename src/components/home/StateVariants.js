@@ -94,17 +94,17 @@ export function StateVariants() {
         </IconContainer>
         <Caption className="text-blue-500">State variants</Caption>
         <BigText>
-          <Widont>Hover and focus states? We got ’em.</Widont>
+          <Widont>Hover 와 focus 상태? 우리만 믿어요.</Widont>
         </BigText>
         <Paragraph>
-          Want to style something on hover? Stick <InlineCode>hover:</InlineCode> at the beginning
-          of the class you want to add. Works for <InlineCode>focus</InlineCode>,{' '}
+          호버에 스타일을 지정하고 싶습니까? 당신이 원하는곳 앞에 <InlineCode>hover:</InlineCode>를 작성하세요.
+          마찬가지로 <InlineCode>focus</InlineCode>,{' '}
           <InlineCode>active</InlineCode>, <InlineCode>disabled</InlineCode>,{' '}
-          <InlineCode>focus-within</InlineCode>, <InlineCode>focus-visible</InlineCode>, and even
-          fancy states we invented ourselves like <InlineCode>group-hover</InlineCode>.
+          <InlineCode>focus-within</InlineCode>, <InlineCode>focus-visible</InlineCode>, 그리고 더 많은 멋진 상태를 발명 했습니다.{' '}
+          <InlineCode>group-hover</InlineCode> 같은걸요.
         </Paragraph>
         <Link href="/docs/hover-focus-and-other-states" color="blue">
-          Learn more<span className="sr-only">, handling hover, focus, and other states</span>
+          더 배우기<span className="sr-only">, handling hover, focus, and other states</span>
         </Link>
       </div>
       <GridLockup
