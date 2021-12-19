@@ -113,16 +113,16 @@ export function DarkMode() {
         </IconContainer>
         <Caption className="text-gray-500">Dark mode</Caption>
         <BigText>
-          <Widont>Now with Dark Mode.</Widont>
+          <Widont>이젠 다크모드도 함께.</Widont>
         </BigText>
         <Paragraph>
-          Don’t want to be one of those websites that blinds people when they open it on their phone
-          at 2am? Enable dark mode in your configuration file then throw{' '}
-          <InlineCode>dark:</InlineCode> in front of any color utility to apply it when dark mode is
-          active. Works for background colors, text colors, border colors, and even gradients.
+          사람들이 새벽 2시에 휴대전화로 웹사이트를 열면 눈을 멀게 하는 웹사이트 중 하나가 되고 싶지
+          않습니까? 당신의 설정 파일에서 다크모드를 활성화 시킨 후{' '}
+          <InlineCode>dark:</InlineCode> 를 컬러 유틸리티 앞에 붙히면 적용할 수 있습니다.{' '}
+          다음에 적용됩니다. background colors, text colors, border colors, 심지어 gradients 까지.
         </Paragraph>
         <Link href="/docs/dark-mode" color="gray">
-          Learn more<span className="sr-only">, dark mode</span>
+          더 배우기<span className="sr-only">, dark mode</span>
         </Link>
       </div>
       <GridLockup

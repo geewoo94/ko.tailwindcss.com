@@ -251,19 +251,19 @@ export function MobileFirst() {
           <img src={iconUrl} alt="" />
         </IconContainer>
         <Caption className="text-indigo-500">Mobile-first</Caption>
-        <BigText>Responsive everything.</BigText>
+        <BigText>이게 다 반응형?</BigText>
         <Paragraph as="div">
           <p>
-            Wrestling with a bunch of complex media queries in your CSS sucks, so Tailwind lets you
-            build responsive designs right in your HTML instead.
+            CSS에서 수많은 복잡한 미디어 쿼리와 씨름하는 것은 짜증나는 일입니다. Tailwind를 사용하면
+            HTML에서 바로 반응형 디자인을 구축할 수 있습니다.
           </p>
           <p>
-            Throw a screen size in front of literally any utility class and watch it magically apply
-            at a specific breakpoint.
+            모든 유틸리티 클래스 앞에 문자 그대로 화면 크기를 작성하고 그곳에서 마술처럼 적용되는
+            것을 지켜보십시오.
           </p>
         </Paragraph>
         <Link href="/docs/responsive-design" color="indigo">
-          Learn more<span className="sr-only">, responsive design</span>
+          더 배우기<span className="sr-only">, responsive design</span>
         </Link>
       </div>
       <div className="hidden mt-16 mb-12 border-b border-gray-100 xl:mb-0 demo-sm:block">

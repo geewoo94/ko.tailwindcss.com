@@ -45,16 +45,15 @@ export function ReadyMadeComponents() {
         </IconContainer>
         <Caption className="text-indigo-500">Ready-made components</Caption>
         <BigText>
-          <Widont>Move even faster with Tailwind UI.</Widont>
+          <Widont>Tailwind UI로 더 빠르게 이동하세요.</Widont>
         </BigText>
         <Paragraph>
-          Tailwind UI is a collection of beautiful, fully responsive UI components, designed and
-          developed by us, the creators of Tailwind CSS. It's got hundreds of ready-to-use examples
-          to choose from, and is guaranteed to help you find the perfect starting point for what you
-          want to build.
+          Tailwind UI는 Tailwind CSS 제작자인 당사가 설계하고 개발한 아름답고 완벽하게 반응하는 UI
+          구성 요소 모음입니다. 바로 사용할 수 있는 수백 개의 예제가 있으며 빌드하려는 항목의 완벽한
+          시작점을 찾는 데 도움이 됩니다.
         </Paragraph>
         <Link href="https://tailwindui.com/" color="indigo">
-          Learn more
+          더 배우기
         </Link>
       </div>
       <GridLockup

@@ -131,14 +131,14 @@ export function Performance() {
           <img src={iconUrl} alt="" />
         </IconContainer>
         <Caption className="text-sky-500">Performance</Caption>
-        <BigText>It's tiny — never ship unused CSS again.</BigText>
+        <BigText>작다 — 사용하지 않는 CSS는 함께 갈 수 없습니다.</BigText>
         <Paragraph>
-          Tailwind automatically removes all unused CSS when building for production, which means
-          your final CSS bundle is the smallest it could possibly be. In fact, most Tailwind
-          projects ship less than 10kB of CSS to the client.
+          Tailwind는 프로덕션용으로 빌드할 때 사용하지 않는 모든 CSS를 자동으로 제거합니다. 즉, 최종
+          CSS가 최소한으로 번들링 됩니다. 사실, 대부분의 Tailwind 프로젝트는 10kB 미만의 CSS를
+          클라이언트에 제공합니다.
         </Paragraph>
         <Link href="/docs/optimizing-for-production" color="sky">
-          Learn more<span className="sr-only">, optimizing for production</span>
+          더 배우기<span className="sr-only">, optimizing for production</span>
         </Link>
       </div>
       <GridLockup

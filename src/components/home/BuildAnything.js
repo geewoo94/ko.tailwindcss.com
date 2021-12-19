@@ -248,15 +248,15 @@ export function BuildAnything() {
         </IconContainer>
         <Caption className="text-pink-500">Build anything</Caption>
         <BigText>
-          <Widont>Build whatever you want, seriously.</Widont>
+          <Widont>당신이 원하는걸 빌드하세요, 진지합니다.</Widont>
         </BigText>
         <Paragraph>
-          Because Tailwind is so low-level, it never encourages you to design the same site twice.
-          Even with the same color palette and sizing scale, it's easy to build the same component
-          with a completely different look in the next project.
+          Tailwind는 low-level이기 때문에 동일한 사이트를 두 번 디자인하도록 권장하지 않습니다. 동일한
+          색상 팔레트와 크기 스케일로 다음 프로젝트에서 완전히 다른 모양으로 동일한 구성 요소를 쉽게
+          구축할 수 있습니다.
         </Paragraph>
         <Link href="/docs/installation" color="pink">
-          Get started<span className="sr-only">, installation</span>
+          시작하기<span className="sr-only">, installation</span>
         </Link>
         <div className="mt-10">
           <Tabs

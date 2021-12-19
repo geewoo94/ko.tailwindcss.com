@@ -313,19 +313,19 @@ export function EditorTools() {
           <img src={iconUrl} alt="" />
         </IconContainer>
         <Caption className="text-sky-500">Editor tools</Caption>
-        <BigText>World-class IDE integration.</BigText>
+        <BigText>세계적 수준의 IDE 통합.</BigText>
         <Paragraph as="div">
           <p>
-            Worried about remembering all of these class names? The Tailwind CSS IntelliSense
-            extension for VS Code has you covered.
+            이 모든 클래스 이름을 기억하는 것이 걱정되십니까? VS Code용 Tailwind CSS IntelliSense
+            확장이 도와줍니다.
           </p>
           <p>
-            Get intelligent autocomplete suggestions, linting, class definitions and more, all
-            within your editor and with no configuration required.
+            똑똑한 자동 완성 제안, 린팅, 클래스 정의 등을 에디터 내에서 설정할 필요 없이 모두 얻을
+            수 있습니다.
           </p>
         </Paragraph>
         <Link href="/docs/intellisense" color="sky">
-          Learn more<span className="sr-only">, editor setup</span>
+          더 배우기<span className="sr-only">, editor setup</span>
         </Link>
       </div>
       <GridLockup
