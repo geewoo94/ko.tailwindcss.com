@@ -4,15 +4,15 @@ import { Steps } from '@/components/Steps'
 
 let steps = [
   {
-    title: 'Create your project',
+    title: '프로젝트 만들기',
     body: () => (
       <p>
-        Start by creating a new Vite project if you don’t have one set up already. The most common
-        approach is to use{' '}
+        아직 Vite 프로젝트를 설정하지 않은 경우 새 Vite 프로젝트를 만드는 것부터 시작하십시오. 가장
+        일반적인 방법은{' '}
         <a href="https://github.com/vitejs/vite/tree/main/packages/create-vite#readme">
           Create Vite
         </a>
-        .
+        를 사용하는 것입니다.
       </p>
     ),
     code: {
@@ -22,11 +22,11 @@ let steps = [
     },
   },
   {
-    title: 'Install Tailwind CSS',
+    title: 'Tailwind CSS 설치',
     body: () => (
       <p>
-        Install <code>tailwindcss</code> and its peer dependencies via npm, and then run the init
-        command to generate both <code>tailwind.config.js</code> and <code>postcss.config.js</code>.
+        npm을 통해 <code>tailwindcss</code> 및 해당 피어 종속성을 설치한 다음 init 명령을 실행하여
+        <code>tailwind.config.js</code> 및 <code>postcss.config.js</code>를 모두 생성합니다.
       </p>
     ),
     code: {
@@ -36,10 +36,10 @@ let steps = [
     },
   },
   {
-    title: 'Configure your template paths',
+    title: '템플릿 경로 구성',
     body: () => (
       <p>
-        Add the paths to all of your template files in your <code>tailwind.config.js</code> file.
+        <code>tailwind.config.js</code> 파일에 모든 템플릿 경로를 추가합니다.
       </p>
     ),
     code: {
@@ -58,11 +58,11 @@ let steps = [
     },
   },
   {
-    title: 'Add the Tailwind directives to your CSS',
+    title: 'CSS에 Tailwind 지시문을 추가합니다.',
     body: () => (
       <p>
-        Create a <code>./src/index.css</code> file and add the <code>@tailwind</code> directives for
-        each of Tailwind’s layers.
+        <code>./src/index.css</code> 파일을 생성한 후 각 Tailwind’s layers 의 <code>@tailwind</code>{' '}
+        지시문을 추가합니다.
       </p>
     ),
     code: {
@@ -72,11 +72,11 @@ let steps = [
     },
   },
   {
-    title: 'Import the CSS file',
+    title: 'CSS 파일 불러오기',
     body: () => (
       <p>
-        Import the newly-created <code>./src/index.css</code> file in your{' '}
-        <code>./src/main.js</code> file.
+        새로 만든 <code>./src/index.css</code> 파일을 <code>./src/main.js</code> 파일에서
+        불러옵니다.
       </p>
     ),
     code: {
@@ -90,10 +90,10 @@ let steps = [
     },
   },
   {
-    title: 'Start your build process',
+    title: '빌드 프로세스 시작',
     body: () => (
       <p>
-        Run your build process with <code>npm run dev</code>.
+        빌드 프로세스를 <code>npm run dev</code>로 실행합니다.
       </p>
     ),
     code: {
@@ -103,8 +103,8 @@ let steps = [
     },
   },
   {
-    title: 'Start using Tailwind in your project',
-    body: () => <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: '프로젝트에서 Tailwind 시작',
+    body: () => <p>Tailwind의 유틸리티 클래스를 사용하여 콘텐츠 스타일을 지정합니다.</p>,
     code: {
       name: 'App.vue',
       lang: 'html',
@@ -120,8 +120,8 @@ let steps = [
 export default function UsingVite({ code }) {
   return (
     <FrameworkGuideLayout
-      title="Install Tailwind CSS with Vue 3 and Vite"
-      description="Setting up Tailwind CSS in a Vue 3 and Vite project."
+      title="Vue 3 및 Vite와 함께 Tailwind CSS를 설치합니다."
+      description="Vue 3 및 Vite 프로젝트에서 Tailwind CSS를 설정합니다."
     >
       <Steps steps={steps} code={code} />
     </FrameworkGuideLayout>
@@ -150,8 +150,8 @@ export function getStaticProps() {
 
 UsingVite.layoutProps = {
   meta: {
-    title: 'Installation: Tailwind CSS with Vue 3 and Vite',
-    section: 'Getting Started',
+    title: '설치: Tailwind CSS 와 Vue 3 그리고 Vite',
+    section: '시작하기',
   },
   Layout: DocumentationLayout,
   allowOverflow: false,

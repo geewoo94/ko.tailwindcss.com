@@ -5,11 +5,11 @@ import { Steps } from '@/components/Steps'
 
 let steps = [
   {
-    title: 'Install Tailwind CSS',
+    title: 'Tailwind CSS 설치',
     body: () => (
       <p>
-        Install <code>tailwindcss</code> and its peer dependencies via npm, and create your{' '}
-        <code>tailwind.config.js</code> file.
+        npm을 통해 <code>tailwindcss</code> 및 해당 peer dependencies를 설치하고{' '}
+        <code>tailwind.config.js</code> 파일을 만듭니다.
       </p>
     ),
     code: {
@@ -19,11 +19,11 @@ let steps = [
     },
   },
   {
-    title: 'Add Tailwind to your PostCSS configuration',
+    title: 'PostCSS 설정에 Tailwind 추가하기',
     body: () => (
       <p>
-        Add <code>tailwindcss</code> and <code>autoprefixer</code> to your{' '}
-        <code>postcss.config.js</code> file.
+        <code>tailwindcss</code> 그리고 <code>autoprefixer</code> 를 당신의{' '}
+        <code>postcss.config.js</code> 파일 안에 추가해 주세요.
       </p>
     ),
     code: {
@@ -38,10 +38,10 @@ let steps = [
     },
   },
   {
-    title: 'Configure your template paths',
+    title: '당신의 template paths를 설정합니다.',
     body: () => (
       <p>
-        Add the paths to all of your template files in your <code>tailwind.config.js</code> file.
+        <code>tailwind.config.js</code> 파일 안에 모든 template path를 추가합니다.
       </p>
     ),
     code: {
@@ -57,11 +57,10 @@ let steps = [
     },
   },
   {
-    title: 'Add the Tailwind directives to your CSS',
+    title: 'Tailwind 지시문을 CSS에 추가합니다.',
     body: () => (
       <p>
-        Add the <code>@tailwind</code> directives for each of Tailwind’s layers to your main CSS
-        file.
+        각 Tailwind’s layers 의 <code>@tailwind</code> 지시문을 당신의 main CSS파일에 추가합니다.
       </p>
     ),
     code: {
@@ -71,11 +70,11 @@ let steps = [
     },
   },
   {
-    title: 'Start your build process',
+    title: '당신의 빌드 프로세스를 실행하세요.',
     body: () => (
       <p>
-        Run your build process with <code>npm run dev</code> or whatever command is configured in
-        your <code>package.json</code> file.
+        <code>npm run dev</code> 로 당신의 빌드 프로세스를 실행하세요. 혹은{' '}
+        <code>package.json</code> 파일 안에 있는 어떤 script도 상관 없습니다.
       </p>
     ),
     code: {
@@ -85,12 +84,12 @@ let steps = [
     },
   },
   {
-    title: 'Start using Tailwind in your HTML',
+    title: 'HTML에서 Tailwind 사용합니다.',
     body: () => (
       <p>
-        Make sure your compiled CSS is included in the <code>{'<head>'}</code>{' '}
-        <em>(your framework might handle this for you)</em>, then start using Tailwind’s utility
-        classes to style your content.
+        <code>{'<head>'}</code> 태그에 컴파일 된 CSS가 삽입 되었는지 확인해 주세요.{' '}
+        <em>(아마 당신의 프레임 워크가 도와줄것 입니다)</em> 그 후에 Tailwind의 유틸리티 클래스를
+        활용하여 당신의 content를 스타일 해 보세요.
       </p>
     ),
     code: {
@@ -118,19 +117,19 @@ export default function UsingPostCss({ code }) {
     <InstallationLayout>
       <div className="relative z-10 prose mb-16 max-w-3xl">
         <p>
-          Installing Tailwind CSS as a PostCSS plugin is the most seamless way to integrate it with
-          build tools like webpack, Rollup, Vite, and Parcel.
+          Tailwind CSS를 PostCSS 플러그인으로 설치하는 것은 webpack, Rollup, Vite 및 Parcel과 같은
+          빌드 도구와 통합하는 가장 완벽한 방법입니다.
         </p>
       </div>
       <Steps steps={steps} code={code} />
       <Cta
-        label="Explore our framework guides"
+        label="프레임워크 가이드 확인하기"
         href="/docs/installation/framework-guides"
         description={
           <>
-            <strong className="text-gray-900 font-semibold">Are you stuck?</strong> Setting up
-            Tailwind with PostCSS can be a bit different across different build tools. Check our
-            framework guides to see if we have more specific instructions for your particular setup.
+            <strong className="text-gray-900 font-semibold">막혔나요?</strong> PostCSS로 Tailwind를
+            설정하는 것은 빌드 도구에 따라 약간 다를 수 있습니다. 특정 설정에 대한 보다 구체적인
+            지침이 있는지 알아보려면 프레임워크 가이드를 확인하세요.
           </>
         }
       />
@@ -160,8 +159,8 @@ export function getStaticProps() {
 
 UsingPostCss.layoutProps = {
   meta: {
-    title: 'Installation: Using PostCSS',
-    section: 'Getting Started',
+    title: '설치: PostCSS를 사용하기',
+    section: '시작하기',
   },
   Layout: DocumentationLayout,
   allowOverflow: false,

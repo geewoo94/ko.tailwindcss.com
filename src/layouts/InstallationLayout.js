@@ -80,23 +80,22 @@ export function InstallationLayout({ children }) {
     <BasicLayout>
       <header className="mb-10 md:flex md:items-start">
         <div className="flex-auto max-w-4xl">
-          <p className="mb-4 text-sm leading-6 font-semibold text-sky-500">Installation</p>
+          <p className="mb-4 text-sm leading-6 font-semibold text-sky-500">설치</p>
           <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
-            Get started with Tailwind CSS
+            Tailwind CSS 시작하기
           </h1>
           <p className="mt-4 text-lg text-gray-700">
-            Tailwind CSS works by scanning all of your HTML files, JavaScript components, and any
-            other templates for class names, generating the corresponding styles and then writing
-            them to a static CSS file.
+            Tailwind CSS는 모든 HTML 파일, JavaScript 구성 요소 및 기타 템플릿에서 클래스 이름을
+            검색하고 해당 스타일을 생성한 다음 정적 CSS 파일에 작성하여 작동합니다.
           </p>
           <p className="mt-4 text-lg text-gray-700">
-            It's fast, flexible, and reliable — with zero-runtime.
+            빠르고 유연하며 안정적입니다. — 제로 런타임으로!
           </p>
         </div>
       </header>
       <section className="mb-16 relative">
         <div className="relative z-10">
-          <h2 className="text-gray-900 text-xl tracking-tight font-bold mb-3">Installation</h2>
+          <h2 className="text-gray-900 text-xl tracking-tight font-bold mb-3">설치</h2>
           <div className="flex overflow-auto mb-6 -mx-4 sm:-mx-6">
             <div className="flex-none min-w-full px-4 sm:px-6">
               <ul className="border-b border-gray-200 space-x-6 flex whitespace-nowrap">

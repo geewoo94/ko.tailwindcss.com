@@ -4,7 +4,7 @@ import { Logo } from '@/components/Logo'
 
 const footerNav = [
   {
-    '시작하기': documentationNav['Getting Started'],
+    '시작하기': documentationNav['시작하기'],
     '핵심 컨셉': documentationNav['Core Concepts'],
   },
   {

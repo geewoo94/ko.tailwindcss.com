@@ -7,11 +7,11 @@ import { theme } from 'tailwind.config'
 
 let steps = [
   {
-    title: 'Add the Play CDN script to your HTML',
+    title: 'Play CDN 스크립트를 HTML에 추가합니다.',
     body: () => (
       <p>
-        Add the Play CDN script tag to the <code>&lt;head&gt;</code> of your HTML file, and start
-        using Tailwind’s utility classes to style your content.
+        <code>{'<head>'}</code> 태그에 Play CDN 스크립트를 추가하세요. 그 후에 Tailwind의 유틸리티
+        클래스를 활용하여 당신의 content를 스타일 해 보세요.
       </p>
     ),
     code: {
@@ -33,14 +33,11 @@ let steps = [
     },
   },
   {
-    title: 'Try customizing your config',
+    title: '설정 커스터마이징 하기',
     body: () => (
       <p>
-        Edit the <code>tailwind.config</code> object to{' '}
-        <NextLink href="/docs/configuration">
-          <a>customize your configuration</a>
-        </NextLink>{' '}
-        with your own design tokens.
+        <code>tailwind.config</code> 를 편집하여{' '}
+        <NextLink href="/docs/configuration">당신만의 디자인 토큰을 커스텀</NextLink> 하세요.
       </p>
     ),
     code: {
@@ -73,11 +70,11 @@ let steps = [
     },
   },
   {
-    title: 'Try adding some custom CSS',
+    title: '사용자 정의 CSS를 추가해 보세요.',
     body: () => (
       <p>
-        Use <code>type="text/tailwindcss"</code> to add custom CSS that supports all of Tailwind's
-        CSS features.
+        <code>type="text/tailwindcss"</code> 을 사용해서 Tailwind의 모든 CSS 기능을 지원하는 사용자
+        지정 CSS를 추가합니다.
       </p>
     ),
     code: {
@@ -113,8 +110,8 @@ export default function PlayCdn({ code }) {
     <InstallationLayout>
       <div className="relative z-10 prose mb-16 max-w-3xl">
         <p>
-          Use the Play CDN to try Tailwind right in the browser without any build step. The Play CDN
-          is designed for development purposes only, and is not the best choice for production.
+          Play CDN을 사용하여 빌드 단계 없이 브라우저에서 Tailwind를 사용해 보십시오. Play CDN은
+          개발 목적으로만 설계되었으며 생산에 가장 적합한 선택은 아닙니다.
         </p>
       </div>
       <Steps steps={steps} code={code} />
@@ -144,8 +141,8 @@ export function getStaticProps() {
 
 PlayCdn.layoutProps = {
   meta: {
-    title: 'Installation: Play CDN',
-    section: 'Getting Started',
+    title: '설치: Play CDN',
+    section: '시작하기',
   },
   Layout: DocumentationLayout,
   allowOverflow: false,

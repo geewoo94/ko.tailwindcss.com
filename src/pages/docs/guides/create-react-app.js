@@ -4,12 +4,12 @@ import { Steps } from '@/components/Steps'
 
 let steps = [
   {
-    title: 'Create your project',
+    title: '프로젝트 만들기',
     body: () => (
       <p>
-        Start by creating a new React project with{' '}
-        <a href="https://create-react-app.dev/docs/getting-started">Create React App</a> if you
-        don't have one already set up.
+        아직 구성하지 않은 경우{' '}
+        <a href="https://create-react-app.dev/docs/getting-started">Create React App</a>으로 새
+        React 프로젝트를 생성하여 시작합니다.
       </p>
     ),
     code: {
@@ -19,11 +19,12 @@ let steps = [
     },
   },
   {
-    title: 'Install Tailwind CSS',
+    title: 'Tailwind CSS 설치',
     body: () => (
       <p>
-        Install <code>tailwindcss</code> and its peer dependencies via npm, and then run the init
-        command to generate both <code>tailwind.config.js</code> and <code>postcss.config.js</code>.
+        npm을 사용하여 <code>tailwindcss</code> 및 해당 피어 종속성을 설치한 다음 init 명령을
+        실행하여 <code>tailwind.config.js</code> 및 <code>postcss.config.js</code>를 모두
+        생성합니다.
       </p>
     ),
     code: {
@@ -33,10 +34,10 @@ let steps = [
     },
   },
   {
-    title: 'Configure your template paths',
+    title: '템플릿 경로 구성',
     body: () => (
       <p>
-        Add the paths to all of your template files in your <code>tailwind.config.js</code> file.
+        <code>tailwind.config.js</code> 파일에 모든 템플릿 경로를 추가합니다.
       </p>
     ),
     code: {
@@ -54,11 +55,11 @@ let steps = [
     },
   },
   {
-    title: 'Add the Tailwind directives to your CSS',
+    title: 'CSS에 Tailwind 지시문을 추가합니다.',
     body: () => (
       <p>
-        Add the <code>@tailwind</code> directives for each of Tailwind’s layers to your{' '}
-        <code>./src/index.css</code> file.
+        <code>./src/index.css</code> 파일에 각 Tailwind’s layers 의 <code>@tailwind</code> 지시문을
+        추가합니다.
       </p>
     ),
     code: {
@@ -68,10 +69,10 @@ let steps = [
     },
   },
   {
-    title: 'Start your build process',
+    title: '빌드 프로세스 시작',
     body: () => (
       <p>
-        Run your build process with <code>npm run start</code>.
+        빌드 프로세스를 <code>npm run start</code>로 실행합니다.
       </p>
     ),
     code: {
@@ -81,8 +82,8 @@ let steps = [
     },
   },
   {
-    title: 'Start using Tailwind in your project',
-    body: () => <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: '프로젝트에서 Tailwind 시작',
+    body: () => <p>Tailwind의 유틸리티 클래스를 사용하여 콘텐츠 스타일을 지정합니다.</p>,
     code: {
       name: 'App.js',
       lang: 'jsx',
@@ -100,8 +101,8 @@ let steps = [
 export default function UsingCRA({ code }) {
   return (
     <FrameworkGuideLayout
-      title="Install Tailwind CSS with Create React App"
-      description="Setting up Tailwind CSS in a Create React App project."
+      title="Create React App을 사용하여 Tailwind CSS를 설치"
+      description="Create React App 프로젝트에서 Tailwind CSS 설정합니다."
     >
       <Steps steps={steps} code={code} />
     </FrameworkGuideLayout>
@@ -125,8 +126,8 @@ export function getStaticProps() {
 
 UsingCRA.layoutProps = {
   meta: {
-    title: 'Installation: Tailwind CSS with Create React App',
-    section: 'Getting Started',
+    title: '설치: Tailwind CSS 와 Create React App',
+    section: '시작하기',
   },
   Layout: DocumentationLayout,
   allowOverflow: false,
