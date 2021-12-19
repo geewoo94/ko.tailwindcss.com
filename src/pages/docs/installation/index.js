@@ -1,15 +1,14 @@
 import { DocumentationLayout } from '@/layouts/DocumentationLayout'
 import { InstallationLayout } from '@/layouts/InstallationLayout'
-import { Cta } from '@/components/Cta'
 import { Steps } from '@/components/Steps'
 
 let steps = [
   {
-    title: 'Install Tailwind CSS',
+    title: 'Tailwind CSS 설치',
     body: () => (
       <p>
-        Install <code>tailwindcss</code> via npm, and create your <code>tailwind.config.js</code>{' '}
-        file.
+        npm을 이용해 <code>tailwindcss</code>를 설치후 <code>tailwind.config.js</code> 파일을
+        생성합니다.
       </p>
     ),
     code: {
@@ -19,10 +18,10 @@ let steps = [
     },
   },
   {
-    title: 'Configure your template paths',
+    title: '당신의 template paths를 설정합니다.',
     body: () => (
       <p>
-        Add the paths to all of your template files in your <code>tailwind.config.js</code> file.
+        <code>tailwind.config.js</code> 파일 안에 모든 template path를 추가합니다.
       </p>
     ),
     code: {
@@ -38,11 +37,10 @@ let steps = [
     },
   },
   {
-    title: 'Add the Tailwind directives to your CSS',
+    title: 'Tailwind 지시문을 CSS에 추가합니다.',
     body: () => (
       <p>
-        Add the <code>@tailwind</code> directives for each of Tailwind’s layers to your main CSS
-        file.
+        각 Tailwind’s layers 의 <code>@tailwind</code> 지시문을 당신의 main CSS파일에 추가합니다.
       </p>
     ),
     code: {
@@ -52,8 +50,8 @@ let steps = [
     },
   },
   {
-    title: 'Start the Tailwind CLI build process',
-    body: () => <p>Run the CLI tool to scan your template files for classes and build your CSS.</p>,
+    title: 'Tailwind CLI의 빌드 프로세스를 실행합니다.',
+    body: () => <p>CLI tool을 실행하면 당신의 모든 template을 스캔하고 CSS를 빌드합니다.</p>,
     code: {
       name: 'Terminal',
       lang: 'terminal',
@@ -61,11 +59,11 @@ let steps = [
     },
   },
   {
-    title: 'Start using Tailwind in your HTML',
+    title: 'HTML에서 Tailwind 사용합니다.',
     body: () => (
       <p>
-        Add your compiled CSS file to the <code>{'<head>'}</code> and start using Tailwind’s utility
-        classes to style your content.
+        컴파일된 당신의 CSS 파일을 <code>{'<head>'}</code> 태그에 삽입해 줍니다.{' '}
+        그 후에 Tailwind의 유틸리티 클래스를 활용하여 당신의 content를 스타일 해 보세요.
       </p>
     ),
     code: {
@@ -93,8 +91,8 @@ export default function TailwindCli({ code }) {
     <InstallationLayout>
       <div className="relative z-10 prose mb-16 max-w-3xl">
         <p>
-          The simplest and fastest way to get up and running with Tailwind CSS from scratch is with
-          the Tailwind CLI tool.
+          Tailwind CSS를 처음부터 시작하고 실행하는 가장 간단하고 빠른 방법은 Tailwind CLI 도구를
+          사용하는 것입니다.
         </p>
       </div>
       <Steps steps={steps} code={code} />
@@ -138,7 +136,7 @@ export function getStaticProps() {
 
 TailwindCli.layoutProps = {
   meta: {
-    title: 'Installation: Tailwind CLI',
+    title: '설치: Tailwind CLI',
   },
   Layout: DocumentationLayout,
   allowOverflow: false,

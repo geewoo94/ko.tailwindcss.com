@@ -4,12 +4,13 @@ import { Steps } from '@/components/Steps'
 
 let steps = [
   {
-    title: 'Create your project',
+    title: '프로젝트 만들기',
     body: () => (
       <p>
-        Start by creating a new Laravel project if you don’t have one set up already. The most
-        common approach is to use{' '}
-        <a href="https://laravel.com/docs/8.x#the-laravel-installer">the Laravel Installer</a>.
+        아직 Laravel 프로젝트를 설정하지 않았다면 새로운 Laravel 프로젝트를 만드는 것부터
+        시작하세요. 가장 일반적인 방법은{' '}
+        <a href="https://laravel.com/docs/8.x#the-laravel-installer">Laravel Installer</a>를
+        사용하는 것입니다.
       </p>
     ),
     code: {
@@ -19,11 +20,11 @@ let steps = [
     },
   },
   {
-    title: 'Install Tailwind CSS',
+    title: 'Tailwind CSS 설치',
     body: () => (
       <p>
-        Install <code>tailwindcss</code> and its peer dependencies via npm, and create your{' '}
-        <code>tailwind.config.js</code> file.
+        npm을 통해 <code>tailwindcss</code> 및 해당 피어 종속성을 설치한 다음 init 명령을 실행하여
+        <code>tailwind.config.js</code> 및 <code>postcss.config.js</code>를 모두 생성합니다.
       </p>
     ),
     code: {
@@ -33,10 +34,11 @@ let steps = [
     },
   },
   {
-    title: 'Add Tailwind to your Laravel Mix configuration',
+    title: 'Laravel Mix 구성에 Tailwind를 추가',
     body: () => (
       <p>
-        In your <code>webpack.mix.js</code> file, add <code>tailwindcss</code> as a PostCSS plugin.
+        <code>webpack.mix.js</code> 파일에서 <code>tailwindcss</code>를 PostCSS 플러그인으로
+        추가합니다.
       </p>
     ),
     code: {
@@ -49,10 +51,10 @@ let steps = [
     },
   },
   {
-    title: 'Configure your template paths',
+    title: '템플릿 경로 구성',
     body: () => (
       <p>
-        Add the paths to all of your template files in your <code>tailwind.config.js</code> file.
+        <code>tailwind.config.js</code> 파일에 모든 템플릿 경로를 추가합니다.
       </p>
     ),
     code: {
@@ -72,11 +74,11 @@ let steps = [
     },
   },
   {
-    title: 'Add the Tailwind directives to your CSS',
+    title: 'CSS에 Tailwind 지시문을 추가합니다.',
     body: () => (
       <p>
-        Add the <code>@tailwind</code> directives for each of Tailwind’s layers to your{' '}
-        <code>./resources/css/app.css</code> file.
+        각 Tailwind’s layers 의 <code>@tailwind</code> 지시문을 당신의{' '}
+        <code>./styles/globals.css</code>파일에 추가합니다.
       </p>
     ),
     code: {
@@ -86,10 +88,10 @@ let steps = [
     },
   },
   {
-    title: 'Start your build process',
+    title: '빌드 프로세스 시작',
     body: () => (
       <p>
-        Run your build process with <code>npm run watch</code>.
+        빌드 프로세스를 <code>npm run watch</code>로 실행합니다.
       </p>
     ),
     code: {
@@ -99,11 +101,11 @@ let steps = [
     },
   },
   {
-    title: 'Start using Tailwind in your project',
+    title: '프로젝트에서 Tailwind 시작',
     body: () => (
       <p>
-        Make sure your compiled CSS is included in the <code>{'<head>'}</code> then start using
-        Tailwind’s utility classes to style your content.
+        당신의 <code>{'<head>'}</code> 태그에 컴파일된 CSS가 포함되어 있는지 확인한 후 Tailwind의
+        유틸리티 클래스를 사용하여 콘텐츠 스타일을 지정합니다.
       </p>
     ),
     code: {
@@ -129,8 +131,8 @@ let steps = [
 export default function UsingLaravel({ code }) {
   return (
     <FrameworkGuideLayout
-      title="Install Tailwind CSS with Laravel"
-      description="Setting up Tailwind CSS in a Laravel project."
+      title="Laravel과 함께 Tailwind CSS 설치"
+      description="Laravel 프로젝트에서 Tailwind CSS를 설정합니다."
     >
       <Steps steps={steps} code={code} />
     </FrameworkGuideLayout>
@@ -154,8 +156,8 @@ export function getStaticProps() {
 
 UsingLaravel.layoutProps = {
   meta: {
-    title: 'Installation: Tailwind CSS with Laravel',
-    section: 'Getting Started',
+    title: '설치: Tailwind CSS 와 Laravel',
+    section: '시작하기',
   },
   Layout: DocumentationLayout,
   allowOverflow: false,

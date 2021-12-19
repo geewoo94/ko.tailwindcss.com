@@ -4,12 +4,13 @@ import { Steps } from '@/components/Steps'
 
 let steps = [
   {
-    title: 'Create your project',
+    title: '프로젝트 만들기',
     body: () => (
       <p>
-        Start by creating a new Next.js project if you don’t have one set up already. The most
-        common approach is to use{' '}
-        <a href="https://nextjs.org/docs/api-reference/create-next-app">Create Next App</a>.
+        아직 Next.js 프로젝트를 설정하지 않은 경우 새 프로젝트를 만드는 것부터 시작합니다. 가장
+        일반적인 접근 방식은{' '}
+        <a href="https://nextjs.org/docs/api-reference/create-next-app">Create Next App</a>을
+        사용하는 것입니다.
       </p>
     ),
     code: {
@@ -19,11 +20,11 @@ let steps = [
     },
   },
   {
-    title: 'Install Tailwind CSS',
+    title: 'Tailwind CSS 설치',
     body: () => (
       <p>
-        Install <code>tailwindcss</code> and its peer dependencies via npm, and then run the init
-        command to generate both <code>tailwind.config.js</code> and <code>postcss.config.js</code>.
+        npm을 통해 <code>tailwindcss</code> 및 해당 피어 종속성을 설치한 다음 init 명령을 실행하여
+        <code>tailwind.config.js</code> 및 <code>postcss.config.js</code>를 모두 생성합니다.
       </p>
     ),
     code: {
@@ -33,10 +34,10 @@ let steps = [
     },
   },
   {
-    title: 'Configure your template paths',
+    title: '템플릿 경로 구성',
     body: () => (
       <p>
-        Add the paths to all of your template files in your <code>tailwind.config.js</code> file.
+        <code>tailwind.config.js</code> 파일에 모든 템플릿 경로를 추가합니다.
       </p>
     ),
     code: {
@@ -55,11 +56,11 @@ let steps = [
     },
   },
   {
-    title: 'Add the Tailwind directives to your CSS',
+    title: 'CSS에 Tailwind 지시문을 추가합니다.',
     body: () => (
       <p>
-        Add the <code>@tailwind</code> directives for each of Tailwind’s layers to your{' '}
-        <code>./styles/globals.css</code> file.
+        각 Tailwind’s layers 의 <code>@tailwind</code> 지시문을 당신의{' '}
+        <code>./styles/globals.css</code>파일에 추가합니다.
       </p>
     ),
     code: {
@@ -69,10 +70,10 @@ let steps = [
     },
   },
   {
-    title: 'Start your build process',
+    title: '빌드 프로세스 시작',
     body: () => (
       <p>
-        Run your build process with <code>npm run dev</code>.
+        빌드 프로세스를 <code>npm run dev</code>로 실행합니다.
       </p>
     ),
     code: {
@@ -82,8 +83,8 @@ let steps = [
     },
   },
   {
-    title: 'Start using Tailwind in your project',
-    body: () => <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: '프로젝트에서 Tailwind 시작',
+    body: () => <p>Tailwind의 유틸리티 클래스를 사용하여 콘텐츠 스타일을 지정합니다.</p>,
     code: {
       name: 'index.js',
       lang: 'jsx',
@@ -101,18 +102,14 @@ let steps = [
 export default function UsingNextJS({ code }) {
   return (
     <FrameworkGuideLayout
-      title="Install Tailwind CSS with Next.js"
-      description="Setting up Tailwind CSS in a Next.js v10+ project."
+      title="Next.js와 함께 테일윈드 CSS를 설치하기"
+      description="Next.js v10+ 프로젝트에서 Tailwind CSS 설정."
     >
       <div className="relative z-10 prose mb-16 max-w-3xl">
         <p>
-          The quickest way to start using Tailwind CSS in your Next.js project is to use the{' '}
-          <a href="https://github.com/vercel/next.js/tree/4d4f3093019179b1928ec07c16f38882241c0375/examples/with-tailwindcss">
-            Next.js + Tailwind CSS Example
-          </a>
-          . This will automatically configure your Tailwind setup based on the official Next.js
-          example. If you'd like to configure Tailwind manually, continue with the rest of this
-          guide.
+          Next.js 프로젝트에서 Tailwind CSS 사용을 시작하는 가장 빠른 방법은 <a href="https://github.com/vercel/next.js/tree/4d4f3093019179b1928ec07c16f38882241c0375/examples/with-tailwindcss">Next.js + Tailwind CSS
+          예제</a>를 사용하는 것입니다. 이렇게 하면 공식 Next.js 예제에 따라 테일윈드 설정이 자동으로
+          구성됩니다. Tailwind를 수동으로 구성하려면 본 안내서의 나머지 부분을 계속 진행합니다.
         </p>
       </div>
       <Steps steps={steps} code={code} />
@@ -142,8 +139,8 @@ export function getStaticProps() {
 
 UsingNextJS.layoutProps = {
   meta: {
-    title: 'Installation: Tailwind CSS with Next.js',
-    section: 'Getting Started',
+    title: '설치: Tailwind CSS 와 Next.js',
+    section: '시작하기',
   },
   Layout: DocumentationLayout,
   allowOverflow: false,

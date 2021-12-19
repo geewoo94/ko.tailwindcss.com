@@ -274,16 +274,15 @@ export function ConstraintBased() {
         </IconContainer>
         <Caption className="text-indigo-500">Constraint-based</Caption>
         <BigText>
-          <Widont>An API for your design system.</Widont>
+          <Widont>당신의 디자인 시스템을 위한 하나의 API.</Widont>
         </BigText>
         <Paragraph>
-          Utility classes help you work within the constraints of a system instead of littering your
-          stylesheets with arbitrary values. They make it easy to be consistent with color choices,
-          spacing, typography, shadows, and everything else that makes up a well-engineered design
-          system.
+          유틸리티 클래스를 사용하면 스타일시트에 임의의 값을 버리는 대신 시스템의 제약 조건 내에서
+          작업할 수 있습니다. 색상 선택, 간격, 타이포그래피, 그림자 및 잘 엔지니어링된 디자인
+          시스템을 구성하는 모든 것과 쉽게 일관성을 유지할 수 있습니다.
         </Paragraph>
         <Link href="/docs/utility-first" color="indigo">
-          Learn more<span className="sr-only">, utility-first fundamentals</span>
+          더 배우기<span className="sr-only">, utility-first fundamentals</span>
         </Link>
         <div className="mt-10">
           <Tabs

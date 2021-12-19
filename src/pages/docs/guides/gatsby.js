@@ -1,19 +1,18 @@
 import { DocumentationLayout } from '@/layouts/DocumentationLayout'
 import { FrameworkGuideLayout } from '@/layouts/FrameworkGuideLayout'
-import { Cta } from '@/components/Cta'
 import { Steps } from '@/components/Steps'
 
 let steps = [
   {
-    title: 'Create your project',
+    title: '프로젝트 만들기',
     body: () => (
       <p>
-        Start by creating a new Gatsby project if you don’t have one set up already. The most common
-        approach is to use{' '}
+        만약 당신이 아직 개츠비 프로젝트를 세팅하지 않았다면, 새로운 개츠비 프로젝트를 만드는 것부터
+        시작하세요. 가장 일반적인 접근 방식은{' '}
         <a href="https://www.gatsbyjs.com/docs/reference/gatsby-cli/#how-to-use-gatsby-cli">
           Gatsby CLI
         </a>
-        .
+        를 사용하는 것입니다.
       </p>
     ),
     code: {
@@ -23,12 +22,12 @@ let steps = [
     },
   },
   {
-    title: 'Install Tailwind CSS',
+    title: 'Tailwind CSS 설치',
     body: () => (
       <p>
-        Using npm, install <code>tailwindcss</code> and its peer dependencies, as well as{' '}
-        <code>gatsby-plugin-postcss</code>, and then run the init command to generate both{' '}
-        <code>tailwind.config.js</code> and <code>postcss.config.js</code>.
+        npm을 사용하여 <code>tailwindcss</code> 및 해당 피어 종속성과{' '}
+        <code>gatsby-plugin-postcss</code>를 설치한 다음 init 명령을 실행하여{' '}
+        <code>tailwind.config.js</code> 및 <code>postcss.config.js</code>를 모두 생성합니다.
       </p>
     ),
     code: {
@@ -38,15 +37,13 @@ let steps = [
     },
   },
   {
-    title: 'Enable the Gatsby PostCSS plugin',
+    title: 'Gatsby PostCSS 플러그인 사용 설정',
     body: () => (
       <p>
-        In your <code>gatsby-config.js</code> file, enable the <code>gatsby-plugin-postcss</code>.
-        See{' '}
-        <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-postcss/">
-          the plugin's documentation
-        </a>{' '}
-        for more information.
+        <code>gatsby-config.js</code> 파일에서 <code>gatsby-plugin-postcss</code>를 사용하도록
+        설정합니다. 자세한 내용은{' '}
+        <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-postcss/">플러그인의 설명서</a>를
+        참조하십시오.
       </p>
     ),
     code: {
@@ -61,10 +58,10 @@ let steps = [
     },
   },
   {
-    title: 'Configure your template paths',
+    title: '템플릿 경로 구성',
     body: () => (
       <p>
-        Add the paths to all of your template files in your <code>tailwind.config.js</code> file.
+        <code>tailwind.config.js</code> 파일에 모든 템플릿 경로를 추가합니다.
       </p>
     ),
     code: {
@@ -82,11 +79,11 @@ let steps = [
     },
   },
   {
-    title: 'Add the Tailwind directives to your CSS',
+    title: 'CSS에 Tailwind 지시문을 추가합니다.',
     body: () => (
       <p>
-        Create a <code>./src/styles/global.css</code> file and add the <code>@tailwind</code>{' '}
-        directives for each of Tailwind’s layers.
+        <code>./src/styles/global.css</code> 파일을 생성한 후 각 Tailwind’s layers 의{' '}
+        <code>@tailwind</code> 지시문을 추가합니다.
       </p>
     ),
     code: {
@@ -96,11 +93,11 @@ let steps = [
     },
   },
   {
-    title: 'Import the CSS file',
+    title: 'CSS 파일 불러오기',
     body: () => (
       <p>
-        Create a <code>gatsby-browser.js</code> file at the root of your project if it doesn’t
-        already exist, and import your newly-created <code>./src/styles/global.css</code> file.
+        프로젝트의 루트에 <code>gatsby-browser.js</code> 파일이 없는 경우 파일을 만들고 새로 만든
+        <code>./src/styles/global.css</code> 파일을 가져옵니다.
       </p>
     ),
     code: {
@@ -110,10 +107,10 @@ let steps = [
     },
   },
   {
-    title: 'Start your build process',
+    title: '빌드 프로세스 시작',
     body: () => (
       <p>
-        Run your build process with <code>gatsby develop</code>.
+        빌드 프로세스를 <code>gatsby develop</code>로 실행합니다.
       </p>
     ),
     code: {
@@ -123,8 +120,8 @@ let steps = [
     },
   },
   {
-    title: 'Start using Tailwind in your project',
-    body: () => <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: '프로젝트에서 Tailwind 시작',
+    body: () => <p>Tailwind의 유틸리티 클래스를 사용하여 콘텐츠 스타일을 지정합니다.</p>,
     code: {
       name: 'index.js',
       lang: 'jsx',
@@ -144,8 +141,8 @@ let steps = [
 export default function UsingGatsby({ code }) {
   return (
     <FrameworkGuideLayout
-      title="Install Tailwind CSS with Gatsby"
-      description="Setting up Tailwind CSS in a Gatsby project."
+      title="개츠비와 함께 테일윈드 CSS를 설치"
+      description="개츠비 프로젝트에서 테일윈드 CSS를 설치하기."
     >
       <Steps steps={steps} code={code} />
     </FrameworkGuideLayout>
@@ -174,8 +171,8 @@ export function getStaticProps() {
 
 UsingGatsby.layoutProps = {
   meta: {
-    title: 'Installation: Tailwind CSS with Gatsby',
-    section: 'Getting Started',
+    title: '설치: Tailwind CSS 와 Gatsby',
+    section: '시작하기',
   },
   Layout: DocumentationLayout,
   allowOverflow: false,

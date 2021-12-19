@@ -68,20 +68,20 @@ function Header() {
         </div>
         <div className="relative max-w-5xl mx-auto pt-20 sm:pt-24 lg:pt-32">
           <h1 className="text-gray-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center">
-            Rapidly build modern websites without ever leaving your HTML.
+            HTML을 떠나지 않고 빠르게 모던한 웹 사이트를 만들어 보세요.
           </h1>
           <p className="mt-6 text-lg text-gray-600 text-center max-w-3xl mx-auto">
-            A utility-first CSS framework packed with classes like{' '}
+            클래스를 사용하는 유틸리티 CSS프레임워크 입니다.{' '}
             <code className="font-mono font-medium text-sky-500">flex</code>,{' '}
             <code className="font-mono font-medium text-sky-500">pt-4</code>,{' '}
-            <code className="font-mono font-medium text-sky-500">text-center</code> and{' '}
-            <code className="font-mono font-medium text-sky-500">rotate-90</code> that can be
-            composed to build any design, directly in your markup.
+            <code className="font-mono font-medium text-sky-500">text-center</code> 그리고{' '}
+            <code className="font-mono font-medium text-sky-500">rotate-90</code>{' '}
+            와 같이 사용해서 마크업에서 직접 모든 디자인을 구축하도록 구성할 수 있습니다.
           </p>
           <div className="mt-6 sm:mt-10 flex justify-center space-x-6 text-sm">
             <NextLink href="/docs/installation">
               <a className="bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 text-white font-semibold h-12 px-6 rounded-lg w-full flex items-center justify-center sm:w-auto">
-                Get started
+                시작하기
               </a>
             </NextLink>
             <SearchButton className="hidden sm:flex items-center w-72 text-left space-x-3 px-4 h-12 bg-white ring-1 ring-gray-900/10 hover:ring-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm rounded-lg text-gray-400">
@@ -101,7 +101,7 @@ function Header() {
                     <path d="m19 19-3.5-3.5" />
                     <circle cx="11" cy="11" r="6" />
                   </svg>
-                  <span className="flex-auto">Quick search...</span>
+                  <span className="flex-auto">빠른 검색...</span>
                   {actionKey && (
                     <kbd className="font-sans font-semibold">
                       <abbr title={actionKey[1]} className="no-underline text-gray-300">
@@ -141,22 +141,22 @@ export default function Home() {
         <Header />
         <section className="text-center px-8">
           <h2 className="text-gray-900 text-4xl tracking-tight font-extrabold sm:text-5xl">
-            “Best practices” don’t actually work.
+            “모범 사례들”은 실제로 유용하지 않았습니다.
           </h2>
           <figure>
             <blockquote>
               <p className="mt-6 max-w-3xl mx-auto text-lg">
-                I’ve written{' '}
+                나는 왜 전통적인 "의미론적 class name"이 CSS를 유지하기 어려운 이유에 대해{' '}
                 <a
                   href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/"
                   className="text-sky-500 font-semibold"
                 >
-                  a few thousand words
+                  수천 단어를
                 </a>{' '}
-                on why traditional “semantic class names” are the reason CSS is hard to maintain,
-                but the truth is you’re never going to believe me until you actually try it. If you
-                can suppress the urge to retch long enough to give it a chance, I really think
-                you’ll wonder how you ever worked with CSS any other way.
+                썼습니다. 그러나 진실은 당신이 실제로 모범 사례를 사용하기 전까지는 결코 내 말을
+                믿지 않을 것이라는 것입니다. 만약 당신이 기회를 줄 수 있을 만큼 오래 재촉하고 싶은
+                충동을 억누를 수 있다면, 저는 정말로 당신이 CSS와 어떻게 일했는지 궁금할 것이라고
+                생각합니다.
               </p>
             </blockquote>
             <figcaption className="mt-6 flex items-center justify-center space-x-4 text-left">

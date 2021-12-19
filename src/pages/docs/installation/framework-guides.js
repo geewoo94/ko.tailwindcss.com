@@ -14,8 +14,8 @@ export default function FrameworkGuides() {
     <InstallationLayout>
       <div className="prose mb-16 max-w-3xl">
         <p>
-          Framework-specific guides that cover our recommended approach to installing Tailwind CSS
-          in a number of popular environments.
+          많이 사용되는 환경에서 Tailwind CSS를 설치하는 권장되는 접근 방식을 다루는 프레임워크별
+          가이드입니다.
         </p>
       </div>
       <ul className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3">
@@ -23,37 +23,38 @@ export default function FrameworkGuides() {
           {
             name: 'Next.js',
             slug: 'nextjs',
-            description: 'Full-featured React framework with great developer experience.',
+            description: '뛰어난 개발자 경험과 함께 모든 기능을 갖춘 Response 프레임워크입니다.',
             logo: NextJsLogo,
           },
           {
             name: 'Laravel',
             slug: 'laravel',
-            description: 'PHP web application framework with expressive, elegant syntax.',
+            description: '표현적이고 우아한 구문을 가진 PHP 웹 애플리케이션 프레임워크입니다.',
             logo: LaravelLogo,
           },
           {
             name: 'Vite',
             slug: 'vite',
-            description: 'Fast and modern development server and build tool.',
+            description: '빠르고 현대적인 개발 서버 및 빌드 도구입니다.',
             logo: ViteLogo,
           },
           {
             name: 'Nuxt.js',
             slug: 'nuxtjs',
-            description: 'Intuitive Vue framework for building universal applications.',
+            description: '범용 애플리케이션 구축을 위한 직관적인 Vue 프레임워크입니다.',
             logo: NuxtJsLogo,
           },
           {
             name: 'Gatsby',
             slug: 'gatsby',
-            description: 'Framework for building static sites with React and GraphQL.',
+            description:
+              'React 및 GraphQL을 사용하여 정적 사이트를 구축하기 위한 프레임워크입니다.',
             logo: GatsbyLogo,
           },
           {
             name: 'Create React App',
             slug: 'create-react-app',
-            description: 'CLI tool for scaffolding a new single-page React application.',
+            description: '새로운 단일 페이지 React application을 비계화하는 CLI 도구입니다.',
             logo: CraLogo,
           },
         ].map(({ name, description, logo: Logo, slug }) => (
@@ -74,15 +75,10 @@ export default function FrameworkGuides() {
       </ul>
       <div className="mt-16 prose max-w-3xl">
         <p>
-          Don't see your framework of choice? Try using{' '}
-          <Link href="/docs/installation">
-            <a>Tailwind CLI</a>
-          </Link>{' '}
-          or installing Tailwind{' '}
-          <Link href="/docs/installation/using-postcss">
-            <a>as a PostCSS plugin</a>
-          </Link>{' '}
-          instead.
+          선택한 프레임워크가 보이지 않나요? <Link href="/docs/installation">Tailwind CLI</Link>를
+          사용하거나 Tailwind를{' '}
+          <Link href="/docs/installation/using-postcss">PostCSS 플러그인</Link>으로 대신 설치해
+          보세요.
         </p>
       </div>
     </InstallationLayout>
@@ -91,8 +87,8 @@ export default function FrameworkGuides() {
 
 FrameworkGuides.layoutProps = {
   meta: {
-    title: 'Installation: Framework Guides',
-    section: 'Getting Started',
+    title: '설치: 프레임워크 가이드',
+    section: '시작하기',
   },
   Layout: DocumentationLayout,
   allowOverflow: false,

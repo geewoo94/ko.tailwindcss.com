@@ -329,14 +329,15 @@ function AtApplySection() {
   return (
     <div className="mt-20 relative max-w-7xl mx-auto px-4 sm:mt-32 sm:px-6 md:px-8 lg:grid lg:grid-cols-12 lg:gap-x-8 lg:grid-rows-1">
       <div className="lg:col-span-7 xl:col-span-6 lg:row-end-1">
-        <h3 className="text-3xl text-gray-900 font-extrabold">Not into component frameworks?</h3>
+        <h3 className="text-3xl text-gray-900 font-extrabold">
+          컴포넌트 기반 프레임워크가 아닌가요?
+        </h3>
         <Paragraph>
-          If you like to keep it old school use Tailwind's <InlineCode>@apply</InlineCode> directive
-          to extract repeated utility patterns into custom CSS classes just by copying and pasting
-          the list of class names.
+          만약 올드스쿨을 유지하고 싶다면 Tailwind의 <InlineCode>@apply</InlineCode> 지시문을 사용하여 클래스 이름 목록을 복사하여
+          붙여넣는 것만으로 반복되는 유틸리티 패턴을 사용자 정의 CSS 클래스로 추출합니다.
         </Paragraph>
         <Link href="/docs/reusing-styles" color="sky">
-          Learn more<span className="sr-only">, reusing styles</span>
+          더 배우기<span className="sr-only">, reusing styles</span>
         </Link>
       </div>
 
@@ -535,12 +536,11 @@ export function ComponentDriven() {
         </IconContainer>
         <Caption className="text-sky-500">Component-driven</Caption>
         <BigText>
-          <Widont>Worried about duplication? Don’t be.</Widont>
+          <Widont>중복 코드가 걱정되시나요? 그러지 마세요.</Widont>
         </BigText>
         <Paragraph>
-          If you're repeating the same utilities over and over and over again, all you have to do is
-          extract them into a component or template partial and boom — you've got a single source of
-          truth so you can make changes in one place.
+          동일한 유틸리티를 계속해서 반복하는 경우 구성 요소 또는 템플릿으로 추출하기만 하면 됩니다.
+          그리고 boom! — 이제 단일 정보 소스가 있으므로 한 곳에서 변경할 수 있습니다.
         </Paragraph>
         <Link href="/docs/reusing-styles" color="sky">
           Learn more<span className="sr-only">, reusing styles</span>

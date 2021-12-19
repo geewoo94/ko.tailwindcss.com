@@ -113,17 +113,17 @@ export function ModernFeatures() {
         </IconContainer>
         <Caption className="text-indigo-500">Modern features</Caption>
         <BigText>
-          <Widont>Cutting-edge is our comfort zone.</Widont>
+          <Widont>최첨단 기술은 우리의 우리 안에 있습니다.</Widont>
         </BigText>
         <Paragraph as="div">
           <p>
-            Tailwind is unapologetically modern, and takes advantage of all the latest and greatest
-            CSS features to make the developer experience as enjoyable as possible.
+            Tailwind는 현대적이며 모든 최신 CSS 기능을 활용하여 개발자 경험을 최대한 즐겁게
+            만듭니다.
           </p>
           <p>
-            We've got first-class CSS grid support, composable transforms and gradients powered by
-            CSS variables, support for modern state selectors like{' '}
-            <InlineCode>:focus-visible</InlineCode>, and tons more.
+            우리는 first-class CSS 그리드 지원, CSS 변수로 구동되는 구성 가능한 변환 및 그라디언트,
+            <InlineCode>:focus-visible</InlineCode>과 같은 최신 상태 selector에 대한 지원 등을
+            제공합니다.
           </p>
         </Paragraph>
         <Link href="/docs/grid-template-columns" color="indigo">
