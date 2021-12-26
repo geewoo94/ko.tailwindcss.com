@@ -1,42 +1,42 @@
 ---
-title: Using with Preprocessors
-description: A guide to using Tailwind with common CSS preprocessors like Sass, Less, and Stylus.
+title: 전처리기와 함께 사용하기
+description: Sass, Less 및 Stylus와 같은 일반적인 CSS 전처리기와 함께 Tailwind를 사용하기 위한 안내서입니다.
 ---
 
 import { TipGood, TipBad } from '@/components/Tip'
 
-Since Tailwind is a PostCSS plugin, there's nothing stopping you from using it with Sass, Less, Stylus, or other preprocessors, just like you can with other PostCSS plugins like [Autoprefixer](https://github.com/postcss/autoprefixer).
+Tailwind는 PostCSS 플러그인이므로 [Autoprefixer](https://github.com/postcss/autoprefixer)와 같은 다른 PostCSS 플러그인과 마찬가지로 Sass, Less, Stylus 또는 기타 프리프로세서에서도 사용할 수 있습니다.
 
-It's important to note that **you don't need to use a preprocessor with Tailwind** — you typically write very little CSS on a Tailwind project anyways so using a preprocessor just isn't as beneficial as it would be in a project where you write a lot of custom CSS.
+중요한 점은 **Tailwind**와 함께 전처리를 사용할 필요가 없다는 것입니다. 일반적으로 Tailwind 프로젝트에서는 CSS를 거의 작성하지 않기 때문에 전처리를 사용하는 custom CSS를 많이 작성하는 프로젝트에서는 일반적으로 유용하지 않다는 것입니다.
 
-This guide only exists as a reference for people who need to integrate Tailwind with a preprocessor for reasons outside of their control, not because it is a recommended practice.
+본 가이드는 Tailwind를 전처리와 통합해야 하는 사용자를 위한 참조용으로만 존재하며, 권장 사례는 아닙니다.
 
 ---
 
-## Using PostCSS as your preprocessor
+## PostCSS를 전처리 하기
 
-If you're using Tailwind for a brand new project and don't need to integrate it with any existing Sass/Less/Stylus stylesheets, you should highly consider relying on other PostCSS plugins to add the preprocessor features you use instead of using a separate preprocessor.
+Tailwind를 새로운 프로젝트에 사용하고 있는데 기존의 Sass/Less/Stylus 스타일시트와 통합할 필요가 없다면 별도의 전처리기 대신 사용하는 다른 PostCSS 플러그인에 의존하는 것을 고려해 보세요.
 
-This has a few benefits:
+이건 몇 가지 이점이 있어요:
 
-- **Your builds will be faster**. Since your CSS doesn't have to be parsed and processed by multiple tools, your CSS will compile much quicker using only PostCSS.
-- **No quirks or workarounds.** Because Tailwind adds some new non-standard keywords to CSS (like `@tailwind`, `@apply`, `theme()`, etc.), you often have to write your CSS in annoying, unintuitive ways to get a preprocessor to give you the expected output. Working exclusively with PostCSS avoids this.
+- **더 빠르게 빌드 될거에요**. 당신의 CSS는 여러 도구들에 의해 구문 분석되고 처리될 필요가 없기 때문에, 당신의 CSS는 PostCSS만을 사용하여 훨씬 더 빠르게 컴파일할 것입니다.
+- **No quirks or workarounds.** Tailwind는 CSS에 새로운 비표준 키워드(예: `@tailwind`, `@apply`, `theme()`)를 추가하기 때문에 예상 출력을 제공하기 위해 종종 성가시고 의도하지 않은 방법으로 CSS를 작성해야 합니다. PostCSS와 독점적으로 작업하면 이러한 문제를 방지할 수 있습니다.
 
-For a fairly comprehensive list of available PostCSS plugins see the [PostCSS GitHub repository](https://github.com/postcss/postcss/blob/master/docs/plugins.md), but here are a few important ones we use on our own projects and can recommend.
+사용 가능한 많은 PostCSS 플러그인 목록은 [PostCSS GitHub 저장소](https://github.com/postcss/postcss/blob/master/docs/plugins.md)를 참조하세요. 그리고 다음은 자체 프로젝트에서 사용하고 권장할 수 있는 몇 가지 중요한 플러그인입니다.
 
 ### Build-time imports
 
-One of the most useful features preprocessors offer is the ability to organize your CSS into multiple files and combine them at build time by processing `@import` statements in advance, instead of in the browser.
+프리프로세서가 제공하는 가장 유용한 기능 중 하나는 CSS를 여러 파일로 구성하고 빌드 시 브라우저 대신 '@import' 문을 미리 처리하여 결합할 수 있는 기능입니다.
 
-The canonical plugin for handling this with PostCSS is [postcss-import](https://github.com/postcss/postcss-import).
+PostCSS를 사용하여 이 문제를 처리하기 위한 표준 플러그인은 [postcss-import](https://github.com/postcss/postcss-import)입니다.
 
-To use it, install the plugin via npm:
+사용하려면 npm을 통해 플러그인을 설치하세요:
 
 ```shell
 npm install -D postcss-import
 ```
 
-Then add it as the very first plugin in your PostCSS configuration:
+그런 다음 PostCSS 구성의 첫 번째 플러그인으로 추가합니다.:
 
 ```js
 // postcss.config.js
@@ -49,9 +49,9 @@ module.exports = {
 }
 ```
 
-One important thing to note about `postcss-import` is that it strictly adheres to the CSS spec and disallows `@import` statements anywhere except at the very top of a file.
+`postcss-import`에서 유의할 점은 CSS 규격을 엄격히 준수하기 때문에 파일의 맨 위가 아닌 다른 곳에서는 '@import' 문을 허용하지 않는다는 것입니다.
 
-<TipBad>Won't work, `@import` statements must come first</TipBad>
+<TipBad>작동하지 않습니다. `@import`을 먼저 작성해야 합니다.</TipBad>
 
 ```css
 /* components.css */
@@ -64,9 +64,9 @@ One important thing to note about `postcss-import` is that it strictly adheres t
 @import "./components/card";
 ```
 
-The easiest solution to this problem is to never mix regular CSS and imports in the same file. Instead, create one main entry-point file for your imports, and keep all of your actual CSS in separate files.
+이 문제에 대한 가장 쉬운 해결책은 일반 CSS import 절대 섞지 않는 것입니다. 대신 import를 위한 하나의 entry 파일 하나를 생성하고 실제 CSS는 모두 별도의 파일에 보관하세요.
 
-<TipGood>Use separate files for imports and actual CSS</TipGood>
+<TipGood>import 및 실제 CSS를 별도의 파일에 작성합니다.</TipGood>
 
 ```css
 /* components.css */
@@ -88,9 +88,9 @@ The easiest solution to this problem is to never mix regular CSS and imports in 
 }
 ```
 
-The place you are most likely to run into this situation is in your main CSS file that includes your `@tailwind` declarations.
+이러한 상황에 부딪힐 가능성이 가장 높은 위치는 `@tailwind` 선언이 포함된 메인 CSS 파일에 있습니다.
 
-<TipBad>Won't work, `@import` statements must come first</TipBad>
+<TipBad>작동하지 않습니다. `@import` 문이 먼저 와야 합니다.</TipBad>
 
 ```css
 @tailwind base;
@@ -103,11 +103,11 @@ The place you are most likely to run into this situation is in your main CSS fil
 @import "./custom-utilities.css";
 ```
 
-You can solve this by creating separate files for each `@tailwind` declaration, and then importing those files in your main stylesheet. To make this easy, we provide separate files for each `@tailwind` declaration out of the box that you can import directly from `node_modules`.
+각 `@tailwind` 선언에 대해 별도의 파일을 만든 다음 기본 스타일시트에 해당 파일을 가져오면 이 문제를 해결할 수 있습니다. 이를 쉽게 하기 위해 `@tailwind` 선언마다 별도의 파일을 제공하여 `node_modules`에서 직접 가져올 수 있습니다.
 
-The `postcss-import` plugin is smart enough to look for files in the `node_modules` folder automatically, so you don't need to provide the entire path — `"tailwindcss/base"` for example is enough.
+`postcss-import` 플러그인은 `node_modules` 폴더에서 파일을 자동으로 찾을 수 있을 정도로 스마트하므로 전체 경로를 제공할 필요가 없습니다. 예를 들어 `tailwindcss/base`만 있으면 됩니다.
 
-<TipGood>Import our provided CSS files</TipGood>
+<TipGood>제공된 CSS 파일들을 Import 하기</TipGood>
 
 ```css
 @import "tailwindcss/base";
@@ -121,10 +121,9 @@ The `postcss-import` plugin is smart enough to look for files in the `node_modul
 ```
 
 ### Nesting
+중첩 선언에 대한 지원을 추가하려면 번들 `Tailwindcss/nesting` 플러그인을 사용하는 것이 좋습니다. PostCSS 플러그인은 [postcss-nested](https://github.com/postcss/postcss-nested) 또는 [postcss-nesting](https://github.com/jonathantneal/postcss-nesting)을 래핑하고 호환성 계층으로 작동하여 선택한 네스팅 플러그인이 `@apply` 및 `@screen`과 같은 Tailwind의 사용자 지정 구문을 올바르게 이해하도록 합니다.
 
-To add support for nested declarations, we recommend our bundled `tailwindcss/nesting` plugin, which is a PostCSS plugin that wraps [postcss-nested](https://github.com/postcss/postcss-nested) or [postcss-nesting](https://github.com/jonathantneal/postcss-nesting) and acts as a compatibility layer to make sure your nesting plugin of choice properly understands Tailwind's custom syntax like `@apply` and `@screen`.
-
-It's included directly in the `tailwindcss` package itself, so to use it all you need to do is add it to your PostCSS configuration, somewhere before Tailwind:
+`Tailwindcss` 패키지 자체에 직접 포함되어 있으므로 Tailwind 이전에 PostCSS 구성에 추가하기만 하면 됩니다.
 
 ```js
 // postcss.config.js
@@ -138,15 +137,15 @@ module.exports = {
 }
 ```
 
-By default, it uses the [postcss-nested](https://github.com/postcss/postcss-nested) plugin under the hood, which uses a Sass-like syntax and is the plugin that powers nesting support in the [Tailwind CSS plugin API](/docs/plugins#css-in-js-syntax).
+기본적으로 [postcss-nested](https://github.com/postcss/postcss-nested) 플러그인을 사용하며, Sass와 유사한 구문을 사용하고 [Tailwind CSS 플러그인 API](/docs/plugins#css-in-js-syntax)에서 네스팅 지원을 실행하는 플러그인입니다.
 
-If you'd rather use [postcss-nesting](https://github.com/jonathantneal/postcss-nesting) (which is based on the work-in-progress [CSS Nesting](https://drafts.csswg.org/css-nesting-1/) specification), first install the plugin:
+[postcss-nesting](https://github.com/jonathantneal/postcss-nesting)(현재 진행 중인 작업 CSS nesting 규격 기반)을 사용하려면 먼저 플러그인을 설치합니다.
 
 ```shell
 npm install postcss-nesting
 ```
 
-Then pass the plugin itself as an argument to `tailwindcss/nesting` in your PostCSS configuration:
+그런 다음 PostCSS 구성에서 플러그인 자체를 `tailwindcss/nesting` 인자로 전달합니다:
 
 ```js
 // postcss.config.js
@@ -160,9 +159,9 @@ module.exports = {
 }
 ```
 
-This can also be helpful if for whatever reason you need to use a very specific version of `postcss-nested` and want to override the version we bundle with `tailwindcss/nesting` itself.
+어떤 이유로든 매우 특정한 버전의 `postcss-nosted`를 사용해야 하며 우리가 번들로 제공하는 버전 자체를 'tailwindcss/nesting'으로 재정의하려는 경우에도 도움이 될 수 있습니다.
 
-Note that if you are using [`postcss-preset-env`](https://github.com/csstools/postcss-preset-env) in your project, you should make sure to disable nesting and let `tailwindcss/nesting` handle it for you instead:
+프로젝트에서 [`postcss-ssh-env`](https://github.com/csstools/postcss-preset-env)를 사용하는 경우 중첩 사용되지 않도록 설정하고 대신 `tailwindcss/nesting`이 이를 처리하도록 해야 합니다.
 
 ```js
 // postcss.config.js
@@ -178,9 +177,9 @@ module.exports = {
 }
 ```
 
-### Variables
+### 변수
 
-These days CSS variables (officially known as custom properties) have really good [browser support](https://caniuse.com/#search=css%20custom%20properties), so you don't need a preprocessor to use variables at all.
+요즘에는 CSS 변수(공식적으로는 사용자 지정 속성이라고 함)가 우수한 [browser support](https://caniuse.com/#search=css%20custom%20properties)를 제공하므로 변수를 사용하기 위해 전처리기가 전혀 필요하지 않습니다.
 
 ```css
 :root {
@@ -195,9 +194,9 @@ These days CSS variables (officially known as custom properties) have really goo
 }
 ```
 
-We use CSS variables extensively within Tailwind itself, so if you can use Tailwind, you can use native CSS variables.
+Tailwind 자체 내에서 CSS 변수를 광범위하게 사용하므로 Tailwind를 사용할 수 있다면 네이티브 CSS 변수를 사용할 수 있습니다.
 
-You may also find that most of the things you've used variables for in the past can be replaced with Tailwind's `theme()` function, which gives you access to all of your design tokens from your `tailwind.config.js` file directly in your CSS:
+또한 과거에 변수를 사용한 대부분의 항목을 Tailwind의 `theme()` 함수로 대체할 수 있습니다. 이 함수는 CSS 파일에서 `tailwind.config.js`에 정의되어 있는모든 디자인 토큰에 액세스할 수 있습니다.
 
 ```css
 .btn {
@@ -207,19 +206,19 @@ You may also find that most of the things you've used variables for in the past 
 }
 ```
 
-Learn more about the `theme()` function in our [functions and directives documentation](/docs/functions-and-directives#theme);
+`theme()` 함수에 대한 자세한 내용은 [함수와 지시문 문서](/docs/functions-and-directives#theme)에서 확인하십시오.
 
 ### Vendor prefixes
 
-For automatically managing vendor prefixes in your CSS, you should use [Autoprefixer](https://github.com/postcss/autoprefixer).
+CSS에서 Vendor prefixes를 자동으로 관리하려면 [Autoprefixer](https://github.com/postcss/autoprefixer)를 사용해야 합니다.
 
-To use it, install it via npm:
+사용하려면 npm을 통해 설치합니다.:
 
 ```shell
 npm install autoprefixer
 ```
 
-Then add it to the very end of your plugin list in your PostCSS configuration:
+그런 다음 PostCSS 구성의 플러그인 목록 맨 끝에 추가하십시오.
 
 ```js
 module.exports = {
@@ -232,17 +231,16 @@ module.exports = {
 
 ---
 
-## Using Sass, Less, or Stylus
+## Sass, Less 또는 Stylus 사용하기
 
-For the best development experience, we highly recommended that you [use PostCSS exclusively](#using-post-css-as-your-preprocessor), and that you don't use preprocessors like Sass or Less in your Tailwind projects.
+최고의 개발 경험을 위해 [PostCSS를 독점적으로 사용할 것](#using-post-css-as-your-preprocessor)을 적극 권장합니다.
+For the best development experience, we highly recommended that you [use PostCSS exclusively](#using-post-css-as-your-preprocessor), Tailwind 프로젝트에서 Sass 또는 Less와 같은 전처리기를 사용하지 않습니다.
 
-To use Tailwind with a preprocessing tool like Sass, Less, or Stylus, you'll need to add an additional build step to your project that lets you run your preprocessed CSS through PostCSS. If you're using Autoprefixer in your project, you already have something like this set up.
+Tailwind를 기존 빌드 프로세스에 통합하는 방법에 대한 자세한 내용은 [Tailwind를 PostCSS 플러그인으로 설치](/docs/installation/using-postcss)하는 방법에 대한 설명서를 참조하십시오.
 
-See our documentation on [installing Tailwind as a PostCSS plugin](/docs/installation/using-postcss) to learn more about integrating Tailwind into your existing build process.
+Tailwind를 전처리와 함께 사용할 때 이해해야 할 가장 중요한 점은 **Sass, Less, Stylus와 같은 프리프로세서가 Tailwind 전에 별도로 실행된다는 것**입니다. 즉, Tailwind의 `theme()` 함수의 출력을 Sass 색상 함수로 공급할 수 없습니다. Sass가 CSS로 컴파일되어 PostCSS로 공급되기 전에는 `theme()` 함수가 실제로 평가되지 않기 때문입니다.
 
-The most important thing to understand about using Tailwind with a preprocessor is that **preprocessors like Sass, Less, and Stylus run separately, before Tailwind**. This means that you can't feed output from Tailwind's `theme()` function into a Sass color function for example, because the `theme()` function isn't actually evaluated until your Sass has been compiled to CSS and fed into PostCSS.
-
-<TipBad>Won't work, Sass is processed first</TipBad>
+<TipBad>작동하지 않습니다. Sass가 먼저 처리됩니다</TipBad>
 
 ```css
 .alert {
@@ -250,13 +248,13 @@ The most important thing to understand about using Tailwind with a preprocessor 
 }
 ```
 
-Aside from that, each preprocessor has its own quirk or two when used with Tailwind, which are outlined with workarounds below.
+그 외에도, 각 프리프로세서는 Tailwind와 함께 사용할 때 고유한 기호가 있으며, 아래에 해결 방법이 요약되어 있습니다.
 
 ### Sass
 
-When using Tailwind with Sass, using `!important` with `@apply` requires you to use interpolation to compile properly.
+Sass에서 Tailwind를 사용할 때 `!important`를 `@apply`와 함께 사용하려면 interpolation을 사용하여 제대로 컴파일해야 합니다.
 
-<TipBad>Won't work, Sass complains about !important</TipBad>
+<TipBad>작동하지 않습니다. Sass는 !important 구문에 불평합니다.</TipBad>
 
 ```css
 .alert {
@@ -264,7 +262,7 @@ When using Tailwind with Sass, using `!important` with `@apply` requires you to 
 }
 ```
 
-<TipGood>Use interpolation as a workaround</TipGood>
+<TipGood>interpolation을 해결 방법으로 사용합니다.</TipGood>
 
 ```css
 .alert {
@@ -274,9 +272,9 @@ When using Tailwind with Sass, using `!important` with `@apply` requires you to 
 
 ### Less
 
-When using Tailwind with Less, you cannot nest Tailwind's `@screen` directive.
+Tailwind with Less를 사용할 때는 Tailwind의 `@screen` 지시문을 중첩할 수 없습니다.
 
-<TipBad>Won't work, Less doesn't realise it's a media query</TipBad>
+<TipBad>작동하지 않습니다. 미디어 쿼리라는 것을 인식하지 못합니다.</TipBad>
 
 ```css
 .card {
@@ -288,9 +286,9 @@ When using Tailwind with Less, you cannot nest Tailwind's `@screen` directive.
 }
 ```
 
-Instead, use a regular media query along with the `theme()` function to reference your screen sizes, or simply don't nest your `@screen` directives.
+대신 `theme()` 기능과 함께 일반 미디어 쿼리를 사용하여 화면 크기를 참조하거나, 단순하게는 `@screen` 지시문을 중첩시키지 마십시오.
 
-<TipGood>Use a regular media query and theme()</TipGood>
+<TipGood>일반 미디어 쿼리 및 theme()을 사용합니다.</TipGood>
 
 ```css
 .card {
@@ -302,7 +300,7 @@ Instead, use a regular media query along with the `theme()` function to referenc
 }
 ```
 
-<TipGood>Use the @screen directive at the top-level</TipGood>
+<TipGood>최상위 레벨에서 @screen 지시문을 사용합니다.</TipGood>
 
 ```css
 .card {
@@ -317,9 +315,9 @@ Instead, use a regular media query along with the `theme()` function to referenc
 
 ### Stylus
 
-When using Tailwind with Stylus, you can't use Tailwind's `@apply` feature without wrapping the entire CSS rule in `@css` so that Stylus treats it as literal CSS:
+Tailwind를 Stylus와 함께 사용할 때 Tailwind의 `@apply` 기능을 사용하려면 `@css`를 사용하여 전체 CSS 규칙을 래핑해야 합니다:
 
-<TipBad>Won't work, Stylus complains about @apply</TipBad>
+<TipBad>작동하지 않습니다. Stylus 는 @apply에 대해 불평합니다.</TipBad>
 
 ```css
 .card {
@@ -327,7 +325,7 @@ When using Tailwind with Stylus, you can't use Tailwind's `@apply` feature witho
 }
 ```
 
-<TipGood>Use @css to avoid processing as Stylus</TipGood>
+<TipGood>@css를 사용하여 Stylus로 처리되지 않도록 합니다.</TipGood>
 
 ```css
 @css {
@@ -337,11 +335,11 @@ When using Tailwind with Stylus, you can't use Tailwind's `@apply` feature witho
 }
 ```
 
-This comes with a significant cost however, which is that **you cannot use any Stylus features inside a `@css` block**.
+그러나 이는 상당한 비용이 수반되는데, 이는 **'@css' 블록 내에서 스타일러스 기능을 사용할 수 없기 때문**입니다.
 
-Another option is to use the `theme()` function instead of `@apply`, and write out the actual CSS properties in long form:
+또 다른 옵션은 `@apply` 대신 `theme()` 함수를 사용하고 실제 CSS 속성을 long form으로 작성하는 것입니다.
 
-<TipGood>Use theme() instead of @apply</TipGood>
+<TipGood>@apply 대신 theme()를 사용합니다.</TipGood>
 
 ```css
 .card {
@@ -351,9 +349,9 @@ Another option is to use the `theme()` function instead of `@apply`, and write o
 }
 ```
 
-In addition to this, Stylus doesn't support nesting the `@screen` directive (just like Less).
+게다가 스타일러스는 `@screen` 지시어(Less와 마찬가지로)를 중첩하는 것을 지원하지 않습니다.
 
-<TipBad>Won't work, Stylus doesn't realise it's a media query</TipBad>
+<TipBad>작동하지 않습니다. Stylus는 미디어 쿼리라는 것을 알지 못합니다.</TipBad>
 
 ```css
 .card {
@@ -365,9 +363,9 @@ In addition to this, Stylus doesn't support nesting the `@screen` directive (jus
 }
 ```
 
-Instead, use a regular media query along with the `theme()` function to reference your screen sizes, or simply don't nest your `@screen` directives.
+대신 `theme()` 기능과 함께 일반 미디어 쿼리를 사용하여 화면 크기를 참조하거나, 단순하게는 `@screen` 지시문을 중첩시키지 마십시오.
 
-<TipGood>Use a regular media query and theme()</TipGood>
+<TipGood>일반 미디어 쿼리 및 theme()을 사용합니다.</TipGood>
 
 ```css
 .card {
@@ -379,7 +377,7 @@ Instead, use a regular media query along with the `theme()` function to referenc
 }
 ```
 
-<TipGood>Use the @screen directive at the top-level</TipGood>
+<TipGood>최상위 레벨에서 @screen 지시문을 사용합니다.</TipGood>
 
 ```css
 .card {
