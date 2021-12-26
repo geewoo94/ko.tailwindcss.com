@@ -1,7 +1,6 @@
 import { IconContainer, Caption, BigText, Paragraph, Link } from '@/components/home/common'
 import { CodeWindow, getClassNameForToken } from '@/components/CodeWindow'
 import { TabBar } from '@/components/TabBar'
-import iconUrl from '@/img/icons/home/performance.png'
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { GridLockup } from '../GridLockup'
@@ -127,9 +126,11 @@ export function Performance() {
   return (
     <section id="performance">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-        <IconContainer>
-          <img src={iconUrl} alt="" />
-        </IconContainer>
+        <IconContainer
+          className="dark:bg-sky-500 dark:highlight-white/20"
+          light={require('@/img/icons/home/performance.png').default}
+          dark={require('@/img/icons/home/dark/performance.png').default}
+        />
         <Caption className="text-sky-500">Performance</Caption>
         <BigText>작다 — 사용하지 않는 CSS는 함께 갈 수 없습니다.</BigText>
         <Paragraph>
@@ -137,7 +138,7 @@ export function Performance() {
           CSS가 최소한으로 번들링 됩니다. 사실, 대부분의 Tailwind 프로젝트는 10kB 미만의 CSS를
           클라이언트에 제공합니다.
         </Paragraph>
-        <Link href="/docs/optimizing-for-production" color="sky">
+        <Link href="/docs/optimizing-for-production" color="sky" darkColor="gray">
           더 배우기<span className="sr-only">, optimizing for production</span>
         </Link>
       </div>
@@ -148,11 +149,12 @@ export function Performance() {
           <div className="relative">
             <div
               ref={containerRef}
-              className="relative bg-gray-800 shadow-xl pt-2 overflow-hidden sm:rounded-xl lg:grid lg:grid-cols-2 lg:grid-rows-1"
+              className="relative bg-gray-800 shadow-xl pt-2 overflow-hidden sm:rounded-xl lg:grid lg:grid-cols-2 lg:grid-rows-1 dark:bg-gray-900/70 dark:backdrop-blur dark:ring-1 dark:ring-inset dark:ring-white/10"
             >
               <div className="row-end-1">
                 <TabBar
                   side="left"
+                  translucent={true}
                   primary={{ name: 'index.html', saved }}
                   secondary={[
                     { name: 'tailwind.config.js' },
@@ -215,7 +217,11 @@ export function Performance() {
                 </CodeWindow.Code2>
               </div>
               <div className="row-span-2 border-t border-gray-500/30 pt-1.5 lg:border-0 lg:pt-0">
-                <TabBar side="right" primary={{ name: 'build.css', saved: true }}>
+                <TabBar
+                  side="right"
+                  translucent={true}
+                  primary={{ name: 'build.css', saved: true }}
+                >
                   <svg width="12" height="2" fill="currentColor">
                     <circle cx="1" cy="1" r="1" />
                     <circle cx="6" cy="1" r="1" />
@@ -227,7 +233,7 @@ export function Performance() {
                   language="css"
                   overflow={false}
                   lines={Math.max(1, rules.flat().length)}
-                  className="border-r border-gray-500/30 h-[20.8125rem] lg:h-[31.6875rem] scroll-smooth overflow-hidden"
+                  className="h-[20.8125rem] lg:h-[31.6875rem] scroll-smooth overflow-hidden"
                 >
                   {rules.map((rule) => (
                     <Rule
@@ -240,7 +246,12 @@ export function Performance() {
               </div>
               <div className="row-start-1 row-end-2 border-t border-gray-500/30">
                 <div className="h-1.5 border-r border-gray-500/30" />
-                <TabBar side="right" primary={{ name: 'Terminal' }} showTabMarkers={false}>
+                <TabBar
+                  side="right"
+                  translucent={true}
+                  primary={{ name: 'Terminal' }}
+                  showTabMarkers={false}
+                >
                   <svg width="12" height="2" fill="currentColor">
                     <circle cx="1" cy="1" r="1" />
                     <circle cx="6" cy="1" r="1" />

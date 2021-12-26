@@ -105,7 +105,7 @@ export default function UsingNextJS({ code }) {
       title="Next.js와 함께 테일윈드 CSS를 설치하기"
       description="Next.js v10+ 프로젝트에서 Tailwind CSS 설정."
     >
-      <div className="relative z-10 prose mb-16 max-w-3xl">
+      <div className="relative z-10 prose mb-16 max-w-3xl dark:prose-dark">
         <p>
           Next.js 프로젝트에서 Tailwind CSS 사용을 시작하는 가장 빠른 방법은 <a href="https://github.com/vercel/next.js/tree/4d4f3093019179b1928ec07c16f38882241c0375/examples/with-tailwindcss">Next.js + Tailwind CSS
           예제</a>를 사용하는 것입니다. 이렇게 하면 공식 Next.js 예제에 따라 테일윈드 설정이 자동으로

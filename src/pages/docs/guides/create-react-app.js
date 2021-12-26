@@ -8,7 +8,7 @@ let steps = [
     body: () => (
       <p>
         아직 구성하지 않은 경우{' '}
-        <a href="https://create-react-app.dev/docs/getting-started">Create React App</a>으로 새
+        <a href="https://create-react-app.dev/docs/getting-started">Create React App v5.0+</a>으로 새
         React 프로젝트를 생성하여 시작합니다.
       </p>
     ),

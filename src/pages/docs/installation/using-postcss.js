@@ -115,19 +115,19 @@ let steps = [
 export default function UsingPostCss({ code }) {
   return (
     <InstallationLayout>
-      <div className="relative z-10 prose mb-16 max-w-3xl">
+      <div className="relative z-10 prose mb-16 max-w-3xl dark:prose-dark">
         <p>
           Tailwind CSS를 PostCSS 플러그인으로 설치하는 것은 webpack, Rollup, Vite 및 Parcel과 같은
           빌드 도구와 통합하는 가장 완벽한 방법입니다.
         </p>
       </div>
-      <Steps steps={steps} code={code} />
+      <Steps level={3} steps={steps} code={code} />
       <Cta
         label="프레임워크 가이드 확인하기"
         href="/docs/installation/framework-guides"
         description={
           <>
-            <strong className="text-gray-900 font-semibold">막혔나요?</strong> PostCSS로 Tailwind를
+            <strong className="text-gray-900 font-semibold dark:text-gray-200">막혔나요?</strong> PostCSS로 Tailwind를
             설정하는 것은 빌드 도구에 따라 약간 다를 수 있습니다. 특정 설정에 대한 보다 구체적인
             지침이 있는지 알아보려면 프레임워크 가이드를 확인하세요.
           </>
