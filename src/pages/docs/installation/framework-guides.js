@@ -12,7 +12,7 @@ import { ReactComponent as CraLogo } from '@/img/guides/cra.svg'
 export default function FrameworkGuides() {
   return (
     <InstallationLayout>
-      <div className="prose mb-16 max-w-3xl">
+      <div className="prose mb-10 max-w-3xl dark:prose-dark">
         <p>
           많이 사용되는 환경에서 Tailwind CSS를 설치하는 권장되는 접근 방식을 다루는 프레임워크별
           가이드입니다.
@@ -24,7 +24,7 @@ export default function FrameworkGuides() {
             name: 'Next.js',
             slug: 'nextjs',
             description: '뛰어난 개발자 경험과 함께 모든 기능을 갖춘 Response 프레임워크입니다.',
-            logo: NextJsLogo,
+            logo: () => <NextJsLogo className="dark:invert" />,
           },
           {
             name: 'Laravel',
@@ -60,20 +60,20 @@ export default function FrameworkGuides() {
         ].map(({ name, description, logo: Logo, slug }) => (
           <li key={name} className="relative flex flex-row-reverse">
             <div className="ml-6 flex-auto">
-              <h3 className="mb-2 leading-6 text-gray-900 font-semibold">
+              <h3 className="mb-2 leading-6 text-gray-900 font-semibold dark:text-gray-200">
                 <Link href={`/docs/guides/${slug}`}>
                   <a className="before:absolute before:inset-0">{name}</a>
                 </Link>
               </h3>
-              <p className="text-sm leading-6 text-gray-700">{description}</p>
+              <p className="text-sm leading-6 text-gray-700 dark:text-gray-400">{description}</p>
             </div>
-            <div className="flex-none w-14 h-14 rounded-full bg-white ring-1 ring-gray-900/5 shadow flex items-center justify-center overflow-hidden">
+            <div className="flex-none w-14 h-14 rounded-full bg-white ring-1 ring-gray-900/5 shadow flex items-center justify-center overflow-hidden dark:bg-gray-800 dark:highlight-white/5">
               <Logo />
             </div>
           </li>
         ))}
       </ul>
-      <div className="mt-16 prose max-w-3xl">
+      <div className="mt-16 prose max-w-3xl dark:prose-dark">
         <p>
           선택한 프레임워크가 보이지 않나요? <Link href="/docs/installation">Tailwind CLI</Link>를
           사용하거나 Tailwind를{' '}

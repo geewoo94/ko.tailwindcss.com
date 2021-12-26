@@ -10,7 +10,6 @@ import {
 } from '@/components/home/common'
 import { Tabs } from '@/components/Tabs'
 import { CodeWindow, getClassNameForToken } from '@/components/CodeWindow'
-import iconUrl from '@/img/icons/home/build-anything.png'
 import { HtmlZenGarden } from '@/components/HtmlZenGarden'
 import clsx from 'clsx'
 import { GridLockup } from '../GridLockup'
@@ -243,10 +242,12 @@ export function BuildAnything() {
   return (
     <section id="build-anything">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-        <IconContainer>
-          <img src={iconUrl} alt="" />
-        </IconContainer>
-        <Caption className="text-pink-500">Build anything</Caption>
+        <IconContainer
+          className="dark:bg-pink-500 dark:highlight-white/30"
+          light={require('@/img/icons/home/build-anything.png').default}
+          dark={require('@/img/icons/home/dark/build-anything.png').default}
+        />
+        <Caption className="text-pink-500 dark:text-pink-400">Build anything</Caption>
         <BigText>
           <Widont>당신이 원하는걸 빌드하세요, 진지합니다.</Widont>
         </BigText>
@@ -255,13 +256,13 @@ export function BuildAnything() {
           색상 팔레트와 크기 스케일로 다음 프로젝트에서 완전히 다른 모양으로 동일한 구성 요소를 쉽게
           구축할 수 있습니다.
         </Paragraph>
-        <Link href="/docs/installation" color="pink">
+        <Link href="/docs/installation" color="pink" darkColor="gray">
           시작하기<span className="sr-only">, installation</span>
         </Link>
         <div className="mt-10">
           <Tabs
-            className="text-pink-500"
-            iconClassName="text-pink-500"
+            className="text-pink-500 dark:text-pink-400"
+            iconClassName="text-pink-500 dark:text-pink-400"
             tabs={themeTabs}
             selected={theme}
             onChange={setTheme}

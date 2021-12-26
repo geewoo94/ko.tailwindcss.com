@@ -1,5 +1,4 @@
 import { IconContainer, Caption, BigText, Paragraph, Link, Widont } from '@/components/home/common'
-import iconUrl from '@/img/icons/home/ready-made-components.png'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import { GridLockup } from '../GridLockup'
@@ -40,9 +39,11 @@ export function ReadyMadeComponents() {
   return (
     <section id="ready-made-components">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-        <IconContainer>
-          <img src={iconUrl} alt="" />
-        </IconContainer>
+        <IconContainer
+          className="dark:bg-indigo-500 dark:highlight-white/20"
+          light={require('@/img/icons/home/ready-made-components.png').default}
+          dark={require('@/img/icons/home/dark/ready-made-components.png').default}
+        />
         <Caption className="text-indigo-500">Ready-made components</Caption>
         <BigText>
           <Widont>Tailwind UI로 더 빠르게 이동하세요.</Widont>
@@ -52,7 +53,7 @@ export function ReadyMadeComponents() {
           구성 요소 모음입니다. 바로 사용할 수 있는 수백 개의 예제가 있으며 빌드하려는 항목의 완벽한
           시작점을 찾는 데 도움이 됩니다.
         </Paragraph>
-        <Link href="https://tailwindui.com/" color="indigo">
+        <Link href="https://tailwindui.com/" color="indigo" darkColor="gray">
           더 배우기
         </Link>
       </div>

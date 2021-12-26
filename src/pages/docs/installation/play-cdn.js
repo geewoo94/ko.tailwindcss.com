@@ -108,13 +108,13 @@ let steps = [
 export default function PlayCdn({ code }) {
   return (
     <InstallationLayout>
-      <div className="relative z-10 prose mb-16 max-w-3xl">
+      <div className="relative z-10 prose mb-16 max-w-3xl dark:prose-dark">
         <p>
           Play CDN을 사용하여 빌드 단계 없이 브라우저에서 Tailwind를 사용해 보십시오. Play CDN은
           개발 목적으로만 설계되었으며 생산에 가장 적합한 선택은 아닙니다.
         </p>
       </div>
-      <Steps steps={steps} code={code} />
+      <Steps level={3} steps={steps} code={code} />
     </InstallationLayout>
   )
 }

@@ -89,13 +89,13 @@ let steps = [
 export default function TailwindCli({ code }) {
   return (
     <InstallationLayout>
-      <div className="relative z-10 prose mb-16 max-w-3xl">
+      <div className="relative z-10 prose mb-16 max-w-3xl dark:prose-dark">
         <p>
           Tailwind CSS를 처음부터 시작하고 실행하는 가장 간단하고 빠른 방법은 Tailwind CLI 도구를
           사용하는 것입니다.
         </p>
       </div>
-      <Steps steps={steps} code={code} />
+      <Steps level={3} steps={steps} code={code} />
       {/*
         <Cta
           label="Read the documentation"
