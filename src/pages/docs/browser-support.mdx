@@ -1,21 +1,21 @@
 ---
 title: Browser Support
-description: Understanding which browsers Tailwind supports and how to manage vendor prefixes.
+description: Tailwind가 지원하는 브라우저와 공급업체 vendor prefix 방법을 이해합니다.
 ---
 
-In general, Tailwind CSS v3.0 is designed for and tested on the latest stable versions of Chrome, Firefox, Edge, and Safari. It does not support any version of IE, including IE 11.
+일반적으로 Tailwind CSS v3.0은 Chrome, Firefox, Edge 및 Safari같은 안정된 최신 버전에 맞게 설계되고 테스트됩니다. 하지만 IE 11을 포함한 어떠한 버전의 IE도 지원하지 않습니다.
 
-While most of the features in Tailwind CSS will work in all modern browsers, Tailwind also includes APIs for several bleeding-edge features that aren't yet supported by all browsers, for example the `:focus-visible` pseudo-class and `backdrop-filter` utilities.
+Tailwind CSS의 대부분의 기능이 모든 최신 브라우저에서 작동하지만, Tailwind에는 `:focus-visible` 의사 클래스 및 `backdrop-filter` 유틸리티와 같은 일부 브라우저가 아직 지원하지 않는 일부 최신 기능에 대한 API도 포함되어 있습니다.
 
-Since Tailwind is such a low-level framework, it's easy to avoid these features if you can't use them by simply not using the utility or modifier that's not supported, much like how you just wouldn't use those CSS features in your CSS.
+Tailwind는 low-level의 프레임워크이므로 지원하지 않는 CSS 기능을 사용하지 않는 것처럼 지원되지 않는 유틸리티나 한정자를 사용하지 않으면 이러한 기능을 피해 사용하는 것이 쉽습니다.
 
-The [Can I Use](https://caniuse.com/?search=focus-visible) database is a great resource when you're unsure about the support for an unfamiliar CSS feature.
+[Can I Use](https://caniuse.com/?search=visible) 데이터베이스는 익숙하지 않은 CSS 기능에 대한 지원이 확실하지 않은 경우 사용하면 유용한 사이트 입니다..
 
 ---
 
 ## Vendor Prefixes
 
-Many CSS properties require vendor prefixes to be understood by browsers, for example `background-clip: text` needs the `-webkit` prefix to work in most browsers:
+대부분의 CSS 속성은 브라우저에서 벤더 접두사를 이해해야 합니다. 예를 들어, `background-clip: text`는 대부분의 브라우저에서 작동하려면 `-webkit` 접두사가 필요합니다.
 
 ```css
 .bg-clip-text {
@@ -24,17 +24,17 @@ Many CSS properties require vendor prefixes to be understood by browsers, for ex
 }
 ```
 
-If you're using the Tailwind CLI tool, vendor prefixes like this will be added automatically.
+Tailwind CLI 툴을 사용하는 경우 이와 같은 vendor prefix가 자동으로 추가됩니다.
 
-If not, we recommend that you use [Autoprefixer](https://github.com/postcss/autoprefixer), which is a PostCSS plugin that automatically adds any necessary vendor prefixes based on the browsers you tell it you need to support.
+그렇지 않은 경우 PostCSS 플러그인인 [Autoprefixer](https://github.com/postcss/autoprefixer),를 사용하는 것이 좋습니다. PostCSS 플러그인은 사용자가 지원해야 하는 브라우저를 기반으로 필요한 vendor prefix를 자동으로 추가합니다.
 
-To use it, install it via npm:
+사용하기 위해 npm을 통해 설치:
 
 ```shell
 npm install autoprefixer
 ```
 
-Then add it to the very end of your plugin list in your PostCSS configuration:
+그런 다음 PostCSS 구성의 플러그인 목록 맨 끝에 추가:
 
 ```js
 module.exports = {
@@ -45,4 +45,4 @@ module.exports = {
 }
 ```
 
-To learn more about specifying which browsers you need to support, check out [Browserslist](https://github.com/browserslist/browserslist) which is the standard way to define target browsers in front-end tooling.
+지원할 브라우저를 지정하는 방법에 대한 자세한 내용은 front-end tooling에서 대상 브라우저를 정의하는 표준 방법인 [Browerslist](https://github.com/browserslist/browserslist)를 참조하십시오.
