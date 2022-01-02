@@ -1,6 +1,6 @@
 ---
 title: Production에 최적화 하기
-description: Getting the most performance out of Tailwind CSS projects.
+description: Tailwind CSS 프로젝트의 성능을 극대화합니다.
 ---
 
 import { Heading } from '@/components/Heading'
@@ -9,21 +9,21 @@ import { SnippetGroup } from '@/components/SnippetGroup'
 import stats from '@/utils/stats'
 import { Performance } from '@/components/home/Performance'
 
-Tailwind CSS is incredibly performance focused and aims to produce the smallest CSS file possible by only generating the CSS you are _actually using_ in your project.
+Tailwind CSS는 놀라울 정도로 성능에 중점을 두고 있으며 프로젝트에서 _실제로 사용하고 있는 CSS만_ 생성하여 가능한 가장 작은 CSS 파일을 생성하는 것을 목표로 합니다.
 
-Combined with minification and network compression, this usually leads to CSS files that are less than 10kB, even for large projects. For example, Netflix uses Tailwind for [Netflix Top 10](https://top10.netflix.com/) and the entire website delivers only 6.5kB of CSS over the network.
+미니화 및 네트워크 압축과 결합하면 대형 프로젝트에서도 일반적으로 10kB 미만의 CSS 파일이 생성됩니다. 예를 들어, Netflix는 [Netflix Top 10](https://top10.netflix.com/)에 Tailwind를 사용하고 전체 웹사이트는 네트워크를 통해 6.5kB의 CSS만 제공합니다.
 
-With CSS files this small, you don't have to worry about complex solutions like code-splitting your CSS for each page, and can instead just ship a single small CSS file that's downloaded once and cached until you redeploy your site.
+이렇게 작은 CSS 파일을 사용하면 각 페이지에 대해 CSS를 코드 분할하는 것과 같은 복잡한 솔루션에 대해 걱정할 필요가 없으며, 대신 사이트를 다시 배포할 때까지 한 번 다운로드하고 캐시한 작은 CSS 파일 하나만 전달할 수 있습니다.
 
-For the smallest possible production build, we recommend minifying your CSS with a tool like [cssnano](https://cssnano.co/), and compressing your CSS with [Brotli](https://en.wikipedia.org/wiki/Brotli).
+가능한 작은 빌드 파일을 위해 [cssno](https://cssnano.co/),와 같은 툴을 사용하여 CSS를 최소화하고 [Brotli](https://en.wikipedia.org/wiki/Brotli))를 사용하여 CSS를 압축할 것을 권장합니다.
 
-If you're using Tailwind CLI, you can minify your CSS by adding the `--minify` flag:
+Tailwind CLI를 사용하는 경우 '--minify' 플래그를 추가하여 CSS를 압축할 수 있습니다.
 
 ```shell
 npx tailwindcss -o build.css --minify
 ```
 
-If you've installed Tailwind as a PostCSS plugin, add `cssnano` to the end of your plugin list:
+Tailwind를 PostCSS 플러그인으로 설치한 경우 플러그인 목록 끝에 `cssnano`를 추가합니다.
 
 ```js postcss.config.js
 module.exports = {
@@ -35,4 +35,4 @@ module.exports = {
 }
 ```
 
-If you're using a framework, check the documentation as this is often handled for you in production automatically and you don't even need to configure it.
+프레임워크를 사용하는 경우, 운영 환경에서 자동으로 처리되는 경우가 많으며 프레임워크를 구성할 필요도 없으므로 설명서를 확인하십시오.
